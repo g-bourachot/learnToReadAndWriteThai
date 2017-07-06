@@ -9,10 +9,11 @@
 import Foundation
 
 class Answer {
-    
+    //MARK: - Variables
     let isRight: Bool
     let media : Media
-    
+        
+    //MARK: - Life cycle functions
     init(media : Media, isRight: Bool) {
         self.media = media
         self.isRight = isRight

@@ -9,10 +9,11 @@
 import Foundation
 
 class User {
-    
+    //MARK: - Variables
     let name : String
     let finishedLevelIds : [Level.Identifier]
     
+    //MARK: - Life cycle functions
     init(name: String, finishedLevelIds : [Level.Identifier]) {
         self.name = name
         self.finishedLevelIds = finishedLevelIds
