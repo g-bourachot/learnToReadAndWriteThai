@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27D74F851F0E745600109078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74F841F0E745600109078 /* AppDelegate.swift */; };
+		27D74F871F0E745600109078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74F861F0E745600109078 /* ViewController.swift */; };
+		27D74F8A1F0E745600109078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D74F881F0E745600109078 /* Main.storyboard */; };
+		27D74F8C1F0E745600109078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D74F8B1F0E745600109078 /* Assets.xcassets */; };
+		27D74F8F1F0E745600109078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D74F8D1F0E745600109078 /* LaunchScreen.storyboard */; };
+		27D74F9A1F0E745600109078 /* LearnToReadAndWriteThaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74F991F0E745600109078 /* LearnToReadAndWriteThaiTests.swift */; };
+		27D74FA91F0E762B00109078 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FA81F0E762B00109078 /* User.swift */; };
+		27D74FAB1F0E763D00109078 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FAA1F0E763D00109078 /* Level.swift */; };
+		27D74FAD1F0E766600109078 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FAC1F0E766600109078 /* Question.swift */; };
+		27D74FAF1F0E776E00109078 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FAE1F0E776E00109078 /* Answer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27D74F961F0E745600109078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27D74F791F0E745600109078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27D74F801F0E745600109078;
+			remoteInfo = LearnToReadAndWriteThai;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27D74F811F0E745600109078 /* LearnToReadAndWriteThai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnToReadAndWriteThai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D74F841F0E745600109078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27D74F861F0E745600109078 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27D74F891F0E745600109078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27D74F8B1F0E745600109078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27D74F8E1F0E745600109078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27D74F901F0E745600109078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D74F951F0E745600109078 /* LearnToReadAndWriteThaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnToReadAndWriteThaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D74F991F0E745600109078 /* LearnToReadAndWriteThaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnToReadAndWriteThaiTests.swift; sourceTree = "<group>"; };
+		27D74F9B1F0E745600109078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D74FA81F0E762B00109078 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		27D74FAA1F0E763D00109078 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = Models/Level.swift; sourceTree = "<group>"; };
+		27D74FAC1F0E766600109078 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = Models/Question.swift; sourceTree = "<group>"; };
+		27D74FAE1F0E776E00109078 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Answer.swift; path = Models/Answer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27D74F7E1F0E745600109078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D74F921F0E745600109078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27D74F781F0E745600109078 = {
+			isa = PBXGroup;
+			children = (
+				27D74F831F0E745600109078 /* LearnToReadAndWriteThai */,
+				27D74F981F0E745600109078 /* LearnToReadAndWriteThaiTests */,
+				27D74F821F0E745600109078 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27D74F821F0E745600109078 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27D74F811F0E745600109078 /* LearnToReadAndWriteThai.app */,
+				27D74F951F0E745600109078 /* LearnToReadAndWriteThaiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27D74F831F0E745600109078 /* LearnToReadAndWriteThai */ = {
+			isa = PBXGroup;
+			children = (
+				27D74F841F0E745600109078 /* AppDelegate.swift */,
+				27D74FA71F0E757B00109078 /* Models */,
+				27D74FA61F0E756B00109078 /* ViewControllers */,
+				27D74FA41F0E74DA00109078 /* UI */,
+				27D74FA51F0E754B00109078 /* Supporting Files */,
+				27D74F861F0E745600109078 /* ViewController.swift */,
+			);
+			path = LearnToReadAndWriteThai;
+			sourceTree = "<group>";
+		};
+		27D74F981F0E745600109078 /* LearnToReadAndWriteThaiTests */ = {
+			isa = PBXGroup;
+			children = (
+				27D74F991F0E745600109078 /* LearnToReadAndWriteThaiTests.swift */,
+				27D74F9B1F0E745600109078 /* Info.plist */,
+			);
+			path = LearnToReadAndWriteThaiTests;
+			sourceTree = "<group>";
+		};
+		27D74FA41F0E74DA00109078 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				27D74F881F0E745600109078 /* Main.storyboard */,
+				27D74F8B1F0E745600109078 /* Assets.xcassets */,
+				27D74F8D1F0E745600109078 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		27D74FA51F0E754B00109078 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27D74F901F0E745600109078 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D74FA61F0E756B00109078 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		27D74FA71F0E757B00109078 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27D74FA81F0E762B00109078 /* User.swift */,
+				27D74FAA1F0E763D00109078 /* Level.swift */,
+				27D74FAC1F0E766600109078 /* Question.swift */,
+				27D74FAE1F0E776E00109078 /* Answer.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27D74F801F0E745600109078 /* LearnToReadAndWriteThai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D74F9E1F0E745600109078 /* Build configuration list for PBXNativeTarget "LearnToReadAndWriteThai" */;
+			buildPhases = (
+				27D74F7D1F0E745600109078 /* Sources */,
+				27D74F7E1F0E745600109078 /* Frameworks */,
+				27D74F7F1F0E745600109078 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LearnToReadAndWriteThai;
+			productName = LearnToReadAndWriteThai;
+			productReference = 27D74F811F0E745600109078 /* LearnToReadAndWriteThai.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27D74F941F0E745600109078 /* LearnToReadAndWriteThaiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D74FA11F0E745600109078 /* Build configuration list for PBXNativeTarget "LearnToReadAndWriteThaiTests" */;
+			buildPhases = (
+				27D74F911F0E745600109078 /* Sources */,
+				27D74F921F0E745600109078 /* Frameworks */,
+				27D74F931F0E745600109078 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27D74F971F0E745600109078 /* PBXTargetDependency */,
+			);
+			name = LearnToReadAndWriteThaiTests;
+			productName = LearnToReadAndWriteThaiTests;
+			productReference = 27D74F951F0E745600109078 /* LearnToReadAndWriteThaiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27D74F791F0E745600109078 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Guillaume Bourachot";
+				TargetAttributes = {
+					27D74F801F0E745600109078 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R5DUS2D66C;
+						ProvisioningStyle = Automatic;
+					};
+					27D74F941F0E745600109078 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R5DUS2D66C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 27D74F801F0E745600109078;
+					};
+				};
+			};
+			buildConfigurationList = 27D74F7C1F0E745600109078 /* Build configuration list for PBXProject "LearnToReadAndWriteThai" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27D74F781F0E745600109078;
+			productRefGroup = 27D74F821F0E745600109078 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27D74F801F0E745600109078 /* LearnToReadAndWriteThai */,
+				27D74F941F0E745600109078 /* LearnToReadAndWriteThaiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27D74F7F1F0E745600109078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D74F8F1F0E745600109078 /* LaunchScreen.storyboard in Resources */,
+				27D74F8C1F0E745600109078 /* Assets.xcassets in Resources */,
+				27D74F8A1F0E745600109078 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D74F931F0E745600109078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27D74F7D1F0E745600109078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D74FAD1F0E766600109078 /* Question.swift in Sources */,
+				27D74F871F0E745600109078 /* ViewController.swift in Sources */,
+				27D74F851F0E745600109078 /* AppDelegate.swift in Sources */,
+				27D74FAF1F0E776E00109078 /* Answer.swift in Sources */,
+				27D74FAB1F0E763D00109078 /* Level.swift in Sources */,
+				27D74FA91F0E762B00109078 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D74F911F0E745600109078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D74F9A1F0E745600109078 /* LearnToReadAndWriteThaiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27D74F971F0E745600109078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27D74F801F0E745600109078 /* LearnToReadAndWriteThai */;
+			targetProxy = 27D74F961F0E745600109078 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27D74F881F0E745600109078 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27D74F891F0E745600109078 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27D74F8D1F0E745600109078 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27D74F8E1F0E745600109078 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27D74F9C1F0E745600109078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27D74F9D1F0E745600109078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27D74F9F1F0E745600109078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R5DUS2D66C;
+				INFOPLIST_FILE = LearnToReadAndWriteThai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gbourachot.LearnToReadAndWriteThai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		27D74FA01F0E745600109078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R5DUS2D66C;
+				INFOPLIST_FILE = LearnToReadAndWriteThai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gbourachot.LearnToReadAndWriteThai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		27D74FA21F0E745600109078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R5DUS2D66C;
+				INFOPLIST_FILE = LearnToReadAndWriteThaiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gbourachot.LearnToReadAndWriteThaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearnToReadAndWriteThai.app/LearnToReadAndWriteThai";
+			};
+			name = Debug;
+		};
+		27D74FA31F0E745600109078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R5DUS2D66C;
+				INFOPLIST_FILE = LearnToReadAndWriteThaiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gbourachot.LearnToReadAndWriteThaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearnToReadAndWriteThai.app/LearnToReadAndWriteThai";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27D74F7C1F0E745600109078 /* Build configuration list for PBXProject "LearnToReadAndWriteThai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D74F9C1F0E745600109078 /* Debug */,
+				27D74F9D1F0E745600109078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D74F9E1F0E745600109078 /* Build configuration list for PBXNativeTarget "LearnToReadAndWriteThai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D74F9F1F0E745600109078 /* Debug */,
+				27D74FA01F0E745600109078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27D74FA11F0E745600109078 /* Build configuration list for PBXNativeTarget "LearnToReadAndWriteThaiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D74FA21F0E745600109078 /* Debug */,
+				27D74FA31F0E745600109078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27D74F791F0E745600109078 /* Project object */;
+}
