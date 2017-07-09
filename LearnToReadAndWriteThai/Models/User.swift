@@ -8,13 +8,16 @@
 
 import Foundation
 
-class User {
+class User: Decodable {
     //MARK: - Variables
+    typealias Identifier = Int
+    let identifier : User.Identifier
     let name : String
     let finishedLevelIds : [Level.Identifier]
     
     //MARK: - Life cycle functions
-    init(name: String, finishedLevelIds : [Level.Identifier]) {
+    init(identifier: User.Identifier, name: String, finishedLevelIds : [Level.Identifier] = []) {
+        self.identifier = identifier
         self.name = name
         self.finishedLevelIds = finishedLevelIds
     }

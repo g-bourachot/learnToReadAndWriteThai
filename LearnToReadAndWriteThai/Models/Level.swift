@@ -17,7 +17,7 @@ class Level {
         case accessible
     }
     
-    typealias Identifier = Int
+    typealias Identifier = String
     
     //MARK: - Variables
     let id : Identifier
