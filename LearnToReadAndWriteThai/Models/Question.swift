@@ -17,13 +17,29 @@ struct Question {
     }
     
     //MARK: - Variables
+    typealias Identifier = Int
+    let identifier: Identifier
     let type : QuestionType
-    let answers : [Answer]
+    let level : Level.Identifier
+    let characters : String?
+    let mediaUrl : String?
+    //let answers : [Answer]
     
     //MARK: - Life cycle functions
-    init(type: QuestionType, answers: [Answer]) {
+    init(identifier: Question.Identifier, type: QuestionType, level: Level.Identifier, characters: String?, mediaUrl: String?) {
+        self.identifier = identifier
         self.type = type
-        self.answers = answers
+        self.level = level
+        self.characters = characters
+        self.mediaUrl = mediaUrl
+    }
+    
+    init(jsonQuestion : JsonQuestion) {
+        self.identifier = jsonQuestion.identifier
+        self.type = QuestionType.init(rawValue: jsonQuestion.type)!
+        self.level = jsonQuestion.level
+        self.characters = jsonQuestion.characters
+        self.mediaUrl = jsonQuestion.mediaUrl
     }
     
 }

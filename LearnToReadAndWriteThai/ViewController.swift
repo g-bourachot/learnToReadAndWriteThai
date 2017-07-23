@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let level = DataManager.getLevel(with: 1, completionHandler: { (level : Level?, error: Error?) in
+        
+        let questions = DataManager.getQuestions(for: 1, limit: 10, completionHandler: { (questions: [Question], error: Error?) in
             if error != nil {
                 print(error)
             }else {
-                print(level)
+                print(questions)
             }
         })
     }

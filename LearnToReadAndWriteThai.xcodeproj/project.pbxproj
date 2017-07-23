@@ -19,6 +19,7 @@
 		27D74FB71F0E81FA00109078 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FB61F0E81FA00109078 /* Level.swift */; };
 		27D74FB91F0E834B00109078 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FB81F0E834B00109078 /* Media.swift */; };
 		345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E066F1F24C03D00C2A42A /* JsonLevel.swift */; };
+		345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E06721F24DEDC00C2A42A /* JsonQuestion.swift */; };
 		3485720D1F125A4400E407C5 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720C1F125A4400E407C5 /* RequestBuilder.swift */; };
 		3485720F1F125DEB00E407C5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720E1F125DEB00E407C5 /* DataManager.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		27D74FB61F0E81FA00109078 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = Models/Level.swift; sourceTree = "<group>"; };
 		27D74FB81F0E834B00109078 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Media.swift; path = Models/Media.swift; sourceTree = "<group>"; };
 		345E066F1F24C03D00C2A42A /* JsonLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonLevel.swift; path = Models/JsonDecodeModels/JsonLevel.swift; sourceTree = "<group>"; };
+		345E06721F24DEDC00C2A42A /* JsonQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonQuestion.swift; path = Models/JsonDecodeModels/JsonQuestion.swift; sourceTree = "<group>"; };
 		3485720C1F125A4400E407C5 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestBuilder.swift; path = API/RequestBuilder.swift; sourceTree = "<group>"; };
 		3485720E1F125DEB00E407C5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = API/DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				345E066F1F24C03D00C2A42A /* JsonLevel.swift */,
+				345E06721F24DEDC00C2A42A /* JsonQuestion.swift */,
 			);
 			name = JsonDecodeModels;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				27D74FB11F0E81C900109078 /* Question.swift in Sources */,
 				345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */,
 				27D74FB91F0E834B00109078 /* Media.swift in Sources */,
+				345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */,
 				27D74F871F0E745600109078 /* ViewController.swift in Sources */,
 				27D74F851F0E745600109078 /* AppDelegate.swift in Sources */,
 				27D74FB51F0E81E900109078 /* User.swift in Sources */,

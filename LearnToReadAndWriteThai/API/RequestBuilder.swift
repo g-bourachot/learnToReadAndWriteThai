@@ -35,4 +35,11 @@ class RequestBuilder {
         }
         throw Error.wrongURL
     }
+    
+    static func getQuestionsRequest(for level: Level.Identifier, limit: Int) throws -> URLRequest {
+        if let url = baseUrlString?.appendingPathComponent("/questions/\(level)/\(limit)") {
+            return URLRequest(url: url)
+        }
+        throw Error.wrongURL
+    }
 }

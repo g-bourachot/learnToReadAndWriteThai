@@ -61,6 +61,21 @@ class DataManager {
         }
     }
     
-    
+    static func getQuestions(for level: Level.Identifier, limit: Int = 20, completionHandler: @escaping ([Question], Error?) -> Void) {
+        if let request = try? RequestBuilder.getQuestionsRequest(for: level, limit: limit){
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    let jsonQuestions = try! decoder.decode([JsonQuestion].self, from: data)
+                    let questions = jsonQuestions.map({Question.init(jsonQuestion: $0)})
+                    completionHandler(questions,nil)
+                }
+                if let error = error {
+                    completionHandler([], error)
+                }
+            })
+            task.resume()
+        }
+    }
     
 }
