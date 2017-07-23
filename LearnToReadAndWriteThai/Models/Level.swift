@@ -12,16 +12,16 @@ class Level {
     
     //MARK: - Declaration of types
     enum Status {
-        case done(maxScore: Int)
+        case done
         case locked
         case accessible
     }
     
-    typealias Identifier = String
+    typealias Identifier = Int
     
     //MARK: - Variables
     let id : Identifier
-    let questions : [Question]
+    let name : String
     let score : Int = 0
     private var status: Status
     
@@ -33,10 +33,25 @@ class Level {
     }
     
     //MARK: - Life cycle functions
-    init(id: Identifier, questions: [Question], status: Status) {
+    init(id: Identifier, name: String, status: Status) {
         self.id = id
-        self.questions = questions
         self.status = status
+        self.name = name
+    }
+    
+    init(jsonLevel : JsonLevel) {
+        self.id = jsonLevel.identifier
+        self.name = jsonLevel.name
+        switch jsonLevel.status {
+        case 0:
+            self.status = .accessible
+        case 1:
+            self.status = .locked
+        case 2:
+            self.status = .done
+        default:
+            self.status = .locked
+        }
     }
     
     //MARK: - Functions

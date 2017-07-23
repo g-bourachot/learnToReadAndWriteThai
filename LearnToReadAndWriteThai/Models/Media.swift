@@ -9,6 +9,7 @@
 import Foundation
 
 class Media {
+    
     //MARK: - Declaration of types
     enum `Type` {
         case sound(URL)

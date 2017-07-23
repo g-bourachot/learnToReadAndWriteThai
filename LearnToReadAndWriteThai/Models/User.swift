@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: Decodable {
+struct User: Decodable {
     //MARK: - Variables
     typealias Identifier = Int
     let identifier : User.Identifier

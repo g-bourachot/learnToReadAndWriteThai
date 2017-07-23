@@ -21,4 +21,18 @@ class RequestBuilder {
         }
         throw Error.wrongURL
     }
+    
+    static func getLevelsRequest() throws -> URLRequest{
+        if let url = baseUrlString?.appendingPathComponent("/levels") {
+            return URLRequest(url: url)
+        }
+        throw Error.wrongURL
+    }
+    
+    static func getLevelRequest(identifier : Level.Identifier) throws -> URLRequest{
+        if let url = baseUrlString?.appendingPathComponent("/level/\(identifier)") {
+            return URLRequest(url: url)
+        }
+        throw Error.wrongURL
+    }
 }

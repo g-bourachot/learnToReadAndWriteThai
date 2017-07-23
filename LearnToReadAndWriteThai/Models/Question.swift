@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Question {
+struct Question {
     //MARK: - Declaration of types
-    enum QuestionType {
-        case soundToCharacter
-        case characterToSound
-        case findTheCharacterClass
+    enum QuestionType: Int {
+        case soundToCharacter = 0
+        case characterToSound = 1
+        case findTheCharacterClass = 2
     }
     
     //MARK: - Variables

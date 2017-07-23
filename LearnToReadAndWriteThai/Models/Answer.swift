@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Answer {
+struct Answer {
     //MARK: - Variables
     let isRight: Bool
     let media : Media
