@@ -11,17 +11,17 @@ import Foundation
 class Media {
     
     //MARK: - Declaration of types
-    enum `Type` {
+    enum MediaType {
         case sound(URL)
         case image(URL)
         case character(String)
     }
     
     //MARK: - Variables
-    let type : Media.Type
+    let type : MediaType
     
     //MARK: - Life cycle functions
-    init(type : Media.Type) {
+    init(type : MediaType) {
         self.type = type
     }
 }

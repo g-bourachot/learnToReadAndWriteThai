@@ -12,19 +12,23 @@ struct Answer {
     //MARK: - Variables
     let isRight: Bool
     let characters : String?
-    let mediaUrl : String?
+    let media : Media?
         
     //MARK: - Life cycle functions
-    init(mediaUrl : String?, isRight: Bool, characters: String?) {
-        self.mediaUrl = mediaUrl
+    init(media : Media?, isRight: Bool, characters: String?) {
+        self.media = media
         self.isRight = isRight
         self.characters = characters
     }
     
     init(jsonAnswer: JsonAnswer) {
-        self.mediaUrl = jsonAnswer.mediaUrl
         self.isRight = (jsonAnswer.isRight == 1)
         self.characters = jsonAnswer.characters
+        if let mediaPath = jsonAnswer.mediaUrl, let mediaURL = URL.init(string: mediaPath) {
+            self.media = Media.init(type: .sound(mediaURL))
+        }else {
+            self.media = nil
+        }
     }
     
 }

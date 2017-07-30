@@ -19,6 +19,11 @@
 		27D74FB71F0E81FA00109078 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FB61F0E81FA00109078 /* Level.swift */; };
 		27D74FB91F0E834B00109078 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FB81F0E834B00109078 /* Media.swift */; };
 		344AD7061F2DD60000E8033E /* JsonAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7051F2DD60000E8033E /* JsonAnswer.swift */; };
+		344AD7081F2DE53100E8033E /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7071F2DE53100E8033E /* DataManagerTests.swift */; };
+		344AD7101F2DE85500E8033E /* CoursesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD70F1F2DE85500E8033E /* CoursesListViewController.swift */; };
+		344AD7121F2DE86B00E8033E /* QuizzesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7111F2DE86B00E8033E /* QuizzesListViewController.swift */; };
+		344AD7151F2E096300E8033E /* QuizzesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7141F2E096300E8033E /* QuizzesCollectionViewCell.swift */; };
+		344AD7171F2E09E000E8033E /* QuizzesColectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7161F2E09E000E8033E /* QuizzesColectionViewDataSource.swift */; };
 		345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E066F1F24C03D00C2A42A /* JsonLevel.swift */; };
 		345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E06721F24DEDC00C2A42A /* JsonQuestion.swift */; };
 		3485720D1F125A4400E407C5 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720C1F125A4400E407C5 /* RequestBuilder.swift */; };
@@ -52,6 +57,11 @@
 		27D74FB61F0E81FA00109078 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = Models/Level.swift; sourceTree = "<group>"; };
 		27D74FB81F0E834B00109078 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Media.swift; path = Models/Media.swift; sourceTree = "<group>"; };
 		344AD7051F2DD60000E8033E /* JsonAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonAnswer.swift; path = Models/JsonDecodeModels/JsonAnswer.swift; sourceTree = "<group>"; };
+		344AD7071F2DE53100E8033E /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
+		344AD70F1F2DE85500E8033E /* CoursesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoursesListViewController.swift; path = ViewControllers/CoursesListViewController.swift; sourceTree = "<group>"; };
+		344AD7111F2DE86B00E8033E /* QuizzesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesListViewController.swift; path = ViewControllers/QuizzesListViewController.swift; sourceTree = "<group>"; };
+		344AD7141F2E096300E8033E /* QuizzesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesCollectionViewCell.swift; path = ViewControllers/QuizzesCollectionView/QuizzesCollectionViewCell.swift; sourceTree = "<group>"; };
+		344AD7161F2E09E000E8033E /* QuizzesColectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesColectionViewDataSource.swift; path = ViewControllers/QuizzesCollectionView/QuizzesColectionViewDataSource.swift; sourceTree = "<group>"; };
 		345E066F1F24C03D00C2A42A /* JsonLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonLevel.swift; path = Models/JsonDecodeModels/JsonLevel.swift; sourceTree = "<group>"; };
 		345E06721F24DEDC00C2A42A /* JsonQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonQuestion.swift; path = Models/JsonDecodeModels/JsonQuestion.swift; sourceTree = "<group>"; };
 		3485720C1F125A4400E407C5 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestBuilder.swift; path = API/RequestBuilder.swift; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 			children = (
 				27D74F991F0E745600109078 /* LearnToReadAndWriteThaiTests.swift */,
 				27D74F9B1F0E745600109078 /* Info.plist */,
+				344AD7071F2DE53100E8033E /* DataManagerTests.swift */,
 			);
 			path = LearnToReadAndWriteThaiTests;
 			sourceTree = "<group>";
@@ -138,6 +149,9 @@
 		27D74FA61F0E756B00109078 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				344AD7131F2E091E00E8033E /* QuizzesColletionView */,
+				344AD70F1F2DE85500E8033E /* CoursesListViewController.swift */,
+				344AD7111F2DE86B00E8033E /* QuizzesListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +176,15 @@
 				3485720E1F125DEB00E407C5 /* DataManager.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		344AD7131F2E091E00E8033E /* QuizzesColletionView */ = {
+			isa = PBXGroup;
+			children = (
+				344AD7141F2E096300E8033E /* QuizzesCollectionViewCell.swift */,
+				344AD7161F2E09E000E8033E /* QuizzesColectionViewDataSource.swift */,
+			);
+			name = QuizzesColletionView;
 			sourceTree = "<group>";
 		};
 		345E06711F24C04700C2A42A /* JsonDecodeModels */ = {
@@ -219,12 +242,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Guillaume Bourachot";
 				TargetAttributes = {
 					27D74F801F0E745600109078 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = BGV49K24UL;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					27D74F941F0E745600109078 = {
@@ -279,11 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344AD7171F2E09E000E8033E /* QuizzesColectionViewDataSource.swift in Sources */,
 				27D74FB71F0E81FA00109078 /* Level.swift in Sources */,
+				344AD7101F2DE85500E8033E /* CoursesListViewController.swift in Sources */,
 				344AD7061F2DD60000E8033E /* JsonAnswer.swift in Sources */,
 				27D74FB11F0E81C900109078 /* Question.swift in Sources */,
 				345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */,
 				27D74FB91F0E834B00109078 /* Media.swift in Sources */,
+				344AD7121F2DE86B00E8033E /* QuizzesListViewController.swift in Sources */,
+				344AD7151F2E096300E8033E /* QuizzesCollectionViewCell.swift in Sources */,
 				345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */,
 				27D74F871F0E745600109078 /* ViewController.swift in Sources */,
 				27D74F851F0E745600109078 /* AppDelegate.swift in Sources */,
@@ -299,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D74F9A1F0E745600109078 /* LearnToReadAndWriteThaiTests.swift in Sources */,
+				344AD7081F2DE53100E8033E /* DataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +371,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -350,7 +381,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -393,7 +428,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -401,7 +438,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -436,7 +477,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gbourachot.LearnToReadAndWriteThai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -449,7 +491,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gbourachot.LearnToReadAndWriteThai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -22,16 +22,16 @@ struct Question {
     let type : QuestionType
     let level : Level.Identifier
     let characters : String?
-    let mediaUrl : String?
+    let media : Media?
     let answers : [Answer]
     
     //MARK: - Life cycle functions
-    init(identifier: Question.Identifier, type: QuestionType, level: Level.Identifier, characters: String?, mediaUrl: String?, answers: [Answer]) {
+    init(identifier: Question.Identifier, type: QuestionType, level: Level.Identifier, characters: String?, media: Media?, answers: [Answer]) {
         self.identifier = identifier
         self.type = type
         self.level = level
         self.characters = characters
-        self.mediaUrl = mediaUrl
+        self.media = media
         self.answers = answers
     }
     
@@ -40,7 +40,12 @@ struct Question {
         self.type = QuestionType.init(rawValue: jsonQuestion.type)!
         self.level = jsonQuestion.level
         self.characters = jsonQuestion.characters
-        self.mediaUrl = jsonQuestion.mediaUrl
+        if let mediaPath = jsonQuestion.mediaUrl, let mediaURL = URL.init(string: mediaPath) {
+            //TODO : change type of media when necessary
+            self.media = Media.init(type: .sound(mediaURL))
+        }else{
+            self.media = nil
+        }
         self.answers = jsonQuestion.answers.map({ Answer.init(jsonAnswer: $0)})
     }
     
