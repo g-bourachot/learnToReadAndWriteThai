@@ -78,4 +78,21 @@ class DataManager {
         }
     }
     
+    static func getAnswers(for question: Question, completionHandler: @escaping ([Answer], Error?) -> Void) {
+        if let request = try? RequestBuilder.getAnswerRequest(for: question) {
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    let jsonAnswers = try! decoder.decode([JsonAnswer].self, from: data)
+                    let answers = jsonAnswers.map({Answer.init(jsonAnswer: $0)})
+                    completionHandler(answers,nil)
+                }
+                if let error = error {
+                    completionHandler([], error)
+                }
+            })
+            task.resume()
+        }
+    }
+    
 }

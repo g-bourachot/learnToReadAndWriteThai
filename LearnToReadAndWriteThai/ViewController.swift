@@ -21,6 +21,15 @@ class ViewController: UIViewController {
                 print(questions)
             }
         })
+        /*
+        let question = Question.init(identifier: 5, type: .findTheCharacter, level: 1, characters: "o", mediaUrl: nil)
+        let answers = DataManager.getAnswers(for: question, completionHandler: { (answers: [Answer], error: Error?) in
+            if error != nil {
+                print(error)
+            }else {
+                print(answers)
+            }
+        }) */
     }
 
     override func didReceiveMemoryWarning() {

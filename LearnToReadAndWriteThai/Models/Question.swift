@@ -13,7 +13,7 @@ struct Question {
     enum QuestionType: Int {
         case soundToCharacter = 0
         case characterToSound = 1
-        case findTheCharacterClass = 2
+        case findTheCharacter = 2
     }
     
     //MARK: - Variables
@@ -23,15 +23,16 @@ struct Question {
     let level : Level.Identifier
     let characters : String?
     let mediaUrl : String?
-    //let answers : [Answer]
+    let answers : [Answer]
     
     //MARK: - Life cycle functions
-    init(identifier: Question.Identifier, type: QuestionType, level: Level.Identifier, characters: String?, mediaUrl: String?) {
+    init(identifier: Question.Identifier, type: QuestionType, level: Level.Identifier, characters: String?, mediaUrl: String?, answers: [Answer]) {
         self.identifier = identifier
         self.type = type
         self.level = level
         self.characters = characters
         self.mediaUrl = mediaUrl
+        self.answers = answers
     }
     
     init(jsonQuestion : JsonQuestion) {
@@ -40,6 +41,7 @@ struct Question {
         self.level = jsonQuestion.level
         self.characters = jsonQuestion.characters
         self.mediaUrl = jsonQuestion.mediaUrl
+        self.answers = jsonQuestion.answers.map({ Answer.init(jsonAnswer: $0)})
     }
     
 }

@@ -11,12 +11,20 @@ import Foundation
 struct Answer {
     //MARK: - Variables
     let isRight: Bool
-    let media : Media
+    let characters : String?
+    let mediaUrl : String?
         
     //MARK: - Life cycle functions
-    init(media : Media, isRight: Bool) {
-        self.media = media
+    init(mediaUrl : String?, isRight: Bool, characters: String?) {
+        self.mediaUrl = mediaUrl
         self.isRight = isRight
+        self.characters = characters
+    }
+    
+    init(jsonAnswer: JsonAnswer) {
+        self.mediaUrl = jsonAnswer.mediaUrl
+        self.isRight = (jsonAnswer.isRight == 1)
+        self.characters = jsonAnswer.characters
     }
     
 }

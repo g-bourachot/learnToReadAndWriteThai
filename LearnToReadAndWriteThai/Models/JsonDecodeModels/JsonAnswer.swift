@@ -1,19 +1,18 @@
 //
-//  JsonQuestion.swift
+//  JsonAnswer.swift
 //  LearnToReadAndWriteThai
 //
-//  Created by Liom on 23/07/2017.
+//  Created by Liom on 30/07/2017.
 //  Copyright © 2017 Guillaume Bourachot. All rights reserved.
 //
 
 import Foundation
 
-struct JsonQuestion : Decodable {
+struct JsonAnswer : Decodable {
     typealias Identifier = Int
     let identifier: Identifier
-    let type : Int
-    let level : Level.Identifier
+    let questionId : Int
     let characters : String?
     let mediaUrl : String?
-    let answers : [JsonAnswer]
+    let isRight : Int
 }

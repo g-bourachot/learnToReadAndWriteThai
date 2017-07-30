@@ -42,4 +42,11 @@ class RequestBuilder {
         }
         throw Error.wrongURL
     }
+    
+    static func getAnswerRequest(for question: Question) throws -> URLRequest {
+        if let url = baseUrlString?.appendingPathComponent("/answers/\(question.identifier)") {
+            return URLRequest(url: url)
+        }
+        throw Error.wrongURL
+    }
 }
