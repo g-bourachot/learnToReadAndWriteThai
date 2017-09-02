@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class QuizzesCollectionViewCell : UICollectionViewCell {
+class QuizzesLevelCell : UICollectionViewCell {
     
     //MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,4 +17,16 @@ class QuizzesCollectionViewCell : UICollectionViewCell {
     func setUpCell(with level: Level) {
         self.titleLabel.text = level.name
     }
+}
+
+class QuizzesLoadingCell : UICollectionViewCell {
+    
+}
+
+class QuizzesErrorCell : UICollectionViewCell {
+    
+}
+
+class QuizzesNoResultCell : UICollectionViewCell {
+    
 }

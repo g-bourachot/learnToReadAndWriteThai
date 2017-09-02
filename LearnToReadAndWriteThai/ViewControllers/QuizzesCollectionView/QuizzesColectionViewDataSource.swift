@@ -40,9 +40,9 @@ class QuizzesColectionViewDataSource {
             content = []
         case .loaded(let levels):
             content = levels.map(CellModel.result)
-        case .loading(_):
+        case .loading:
             content = [.loading]
-        case .error(_):
+        case .error:
             content = [.error]
         }
     }

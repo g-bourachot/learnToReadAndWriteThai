@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ar7-rA-2lx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ar7-rA-2lx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuizzesCollectionViewCell" id="QsX-OL-G1K" customClass="QuizzesCollectionViewCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuizzesLevelCell" id="QsX-OL-G1K" customClass="QuizzesLevelCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -41,8 +41,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXF-wY-e8E">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umY-KT-lpN">
-                                                            <rect key="frame" x="29" y="40" width="42" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umY-KT-lpN">
+                                                            <rect key="frame" x="22.5" y="40" width="55" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -65,6 +65,102 @@
                                         <connections>
                                             <outlet property="titleLabel" destination="umY-KT-lpN" id="89x-cR-d52"/>
                                         </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuizzesLoadingCell" id="Pnp-tj-bSo" customClass="QuizzesLoadingCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="137.5" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siQ-Vd-zP1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-nj-uel">
+                                                            <rect key="frame" x="12" y="40" width="76.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="tS3-nj-uel" firstAttribute="centerX" secondItem="siQ-Vd-zP1" secondAttribute="centerX" id="2pN-ss-NQq"/>
+                                                        <constraint firstItem="tS3-nj-uel" firstAttribute="centerY" secondItem="siQ-Vd-zP1" secondAttribute="centerY" id="lfF-jX-Oen"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="siQ-Vd-zP1" firstAttribute="top" secondItem="Pnp-tj-bSo" secondAttribute="top" id="1wI-x9-Qqw"/>
+                                            <constraint firstAttribute="trailing" secondItem="siQ-Vd-zP1" secondAttribute="trailing" id="NDE-pw-xsk"/>
+                                            <constraint firstItem="siQ-Vd-zP1" firstAttribute="leading" secondItem="Pnp-tj-bSo" secondAttribute="leading" id="beB-ee-dAx"/>
+                                            <constraint firstAttribute="bottom" secondItem="siQ-Vd-zP1" secondAttribute="bottom" id="pBJ-42-lcE"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuizzesErrorCell" id="zqE-GR-uxa" customClass="QuizzesErrorCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="275" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSm-5b-FCa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K47-gh-ueg">
+                                                            <rect key="frame" x="23.5" y="40" width="53" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="K47-gh-ueg" firstAttribute="centerX" secondItem="RSm-5b-FCa" secondAttribute="centerX" id="BAJ-lo-Eoy"/>
+                                                        <constraint firstItem="K47-gh-ueg" firstAttribute="centerY" secondItem="RSm-5b-FCa" secondAttribute="centerY" id="jHB-Pv-kR0"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="RSm-5b-FCa" secondAttribute="trailing" id="EgA-uN-fNp"/>
+                                            <constraint firstAttribute="bottom" secondItem="RSm-5b-FCa" secondAttribute="bottom" id="eQk-Vw-FBS"/>
+                                            <constraint firstItem="RSm-5b-FCa" firstAttribute="top" secondItem="zqE-GR-uxa" secondAttribute="top" id="thy-5U-muT"/>
+                                            <constraint firstItem="RSm-5b-FCa" firstAttribute="leading" secondItem="zqE-GR-uxa" secondAttribute="leading" id="xgw-3J-fbe"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuizzesNoResultCell" id="zrY-rU-oiT" customClass="QuizzesNoResultCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="110" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-yi-JbD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@NoResult" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-7Y-9BH">
+                                                            <rect key="frame" x="7.5" y="40" width="85" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="KWg-7Y-9BH" firstAttribute="centerX" secondItem="a6g-yi-JbD" secondAttribute="centerX" id="G5u-xg-mvW"/>
+                                                        <constraint firstItem="KWg-7Y-9BH" firstAttribute="centerY" secondItem="a6g-yi-JbD" secondAttribute="centerY" id="iUQ-Ik-k1K"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="a6g-yi-JbD" secondAttribute="trailing" id="7bZ-bG-hcd"/>
+                                            <constraint firstItem="a6g-yi-JbD" firstAttribute="leading" secondItem="zrY-rU-oiT" secondAttribute="leading" id="gya-7a-t8R"/>
+                                            <constraint firstAttribute="bottom" secondItem="a6g-yi-JbD" secondAttribute="bottom" id="o45-QW-Eff"/>
+                                            <constraint firstItem="a6g-yi-JbD" firstAttribute="top" secondItem="zrY-rU-oiT" secondAttribute="top" id="shf-rB-7xq"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -89,6 +185,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUq-Qg-9kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1214" y="77"/>
+        </scene>
+        <!--Quizz View Controller-->
+        <scene sceneID="pgU-VO-i9r">
+            <objects>
+                <viewController storyboardIdentifier="QuizzViewController" id="4fc-Ve-7wW" customClass="QuizzViewController" customModule="LearnToReadAndWriteThai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a4X-t2-clf"/>
+                        <viewControllerLayoutGuide type="bottom" id="kcA-6h-PZ4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wx0-2e-DWF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ku2-Kj-92V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="77"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="3Wg-76-CXE">
+            <objects>
+                <viewController storyboardIdentifier="QuestionViewController" id="28t-xE-Vm6" customClass="QuestionViewController" customModule="LearnToReadAndWriteThai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VE2-Ip-6Md"/>
+                        <viewControllerLayoutGuide type="bottom" id="RLs-Jb-Zyd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h4P-rq-tKr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbz-3n-7MO">
+                                <rect key="frame" x="20" y="30" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-JU-F3m">
+                                <rect key="frame" x="0.0" y="71" width="375" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vBO-4N-GuB">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R8Y-0S-6Yd">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70W-MU-d6a">
+                                <rect key="frame" x="2" y="617" width="353" height="30"/>
+                                <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="validateAction:" destination="28t-xE-Vm6" eventType="touchUpInside" id="6Mt-XL-obh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tbz-3n-7MO" secondAttribute="trailing" constant="20" id="7je-MM-bFD"/>
+                            <constraint firstItem="70W-MU-d6a" firstAttribute="top" secondItem="d6F-JU-F3m" secondAttribute="bottom" constant="2" id="Ari-kh-6O5"/>
+                            <constraint firstAttribute="trailing" secondItem="70W-MU-d6a" secondAttribute="trailing" constant="20" id="RRh-dj-mgV"/>
+                            <constraint firstItem="RLs-Jb-Zyd" firstAttribute="top" secondItem="70W-MU-d6a" secondAttribute="bottom" constant="20" id="TXi-vS-Ac1"/>
+                            <constraint firstItem="tbz-3n-7MO" firstAttribute="top" secondItem="VE2-Ip-6Md" secondAttribute="bottom" constant="10" id="U3w-46-DOq"/>
+                            <constraint firstItem="d6F-JU-F3m" firstAttribute="top" secondItem="tbz-3n-7MO" secondAttribute="bottom" constant="20" id="WNL-Ve-zeo"/>
+                            <constraint firstAttribute="trailing" secondItem="d6F-JU-F3m" secondAttribute="trailing" id="Z4e-6e-Jx9"/>
+                            <constraint firstItem="70W-MU-d6a" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" constant="2" id="bqd-sU-oQo"/>
+                            <constraint firstItem="tbz-3n-7MO" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" constant="20" id="gfR-2X-giv"/>
+                            <constraint firstItem="d6F-JU-F3m" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" id="p8B-hJ-eYP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="questionLabel" destination="tbz-3n-7MO" id="dcd-kF-ZV8"/>
+                        <outlet property="validateButton" destination="70W-MU-d6a" id="zX3-rS-KGn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxl-Qg-J5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2559" y="77"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Lqy-lc-xaU">

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class QuizzesListViewController : UIViewController, UICollectionViewDataSource, QuizzesColectionViewDataSourceDelegate {
+class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesColectionViewDataSourceDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,10 +31,51 @@ class QuizzesListViewController : UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuizzesCollectionViewCell", for: indexPath) as! QuizzesCollectionViewCell
-        //let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
-        //TODO : set the title of the level
-        return cell
+        let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
+        
+        switch cellModel {
+        case .loading:
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuizzesLoadingCell", for: indexPath) as! QuizzesLoadingCell
+            return cell
+        case .error:
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuizzesErrorCell", for: indexPath) as! QuizzesErrorCell
+            return cell
+        case .noResult:
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuizzesNoResultCell", for: indexPath) as! QuizzesNoResultCell
+            return cell
+        case .result(let level):
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "QuizzesLevelCell", for: indexPath) as! QuizzesLevelCell
+            cell.setUpCell(with: level)
+            return cell
+        }
+    }
+    
+    //MARK: - UICollectionView
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
+        
+        switch cellModel {
+        case .result(let level):
+            //TODO: Print Loading spinning
+            
+            let quizzGenerator = QuizzGenerator(level: level, numberOfQuestion: 5)
+            quizzGenerator.generate(completionHandler: { (generatedQuizz, error) in
+                //TODO: Stop spinning
+                if error != nil {
+                    //TODO: Present error
+                    print("fuck me")
+                }
+                
+                if let quizz = generatedQuizz {
+                    let quizzViewController = self.storyboard!.instantiateViewController(withIdentifier: "QuizzViewController") as! QuizzViewController
+                    quizzViewController.presentedQuizz = quizz
+                    self.present(quizzViewController, animated: true, completion: nil)
+                }
+                
+            })
+        default:
+            break
+        }
     }
     
     //MARK: - QuizzesColectionViewDataSourceDelegate
