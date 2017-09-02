@@ -1,5 +1,5 @@
 //
-//  QuizzesColectionViewDataSource.swift
+//  QuizzesCollectionViewDataSource.swift
 //  LearnToReadAndWriteThai
 //
 //  Created by Liom on 30/07/2017.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol QuizzesColectionViewDataSourceDelegate {
+protocol QuizzesCollectionViewDataSourceDelegate {
     func errorOccured(error: Error)
     func didRefresh()
 }
 
-class QuizzesColectionViewDataSource {
+class QuizzesCollectionViewDataSource {
     
     enum State {
         case initial
@@ -30,7 +30,7 @@ class QuizzesColectionViewDataSource {
     
     //MARK: - Variables
     var content : [CellModel] = []
-    var delegate: QuizzesColectionViewDataSourceDelegate?
+    var delegate: QuizzesCollectionViewDataSourceDelegate?
     let numberOfSection = 1
     
     //MARK: - Functions

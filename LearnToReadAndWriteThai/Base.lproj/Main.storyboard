@@ -226,21 +226,128 @@
                                 <rect key="frame" x="0.0" y="71" width="375" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vBO-4N-GuB">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="162" height="61"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R8Y-0S-6Yd">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnswersCollectionViewCell" id="R8Y-0S-6Yd" customClass="AnswersCollectionViewCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYG-hm-4uA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeW-vl-AqC">
+                                                            <rect key="frame" x="10" y="20" width="110" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-nN-AJf">
+                                                            <rect key="frame" x="121" y="13" width="31" height="34"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="34" id="nfh-NU-EXw"/>
+                                                                <constraint firstAttribute="width" constant="31" id="rEt-RJ-nxX"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="N6e-nN-AJf" secondAttribute="trailing" constant="10" id="Hc1-by-HCj"/>
+                                                        <constraint firstItem="yeW-vl-AqC" firstAttribute="leading" secondItem="nYG-hm-4uA" secondAttribute="leading" constant="10" id="QUq-Gf-43T"/>
+                                                        <constraint firstItem="yeW-vl-AqC" firstAttribute="top" secondItem="nYG-hm-4uA" secondAttribute="top" constant="20" id="Y2C-cc-0MS"/>
+                                                        <constraint firstAttribute="height" constant="61" id="acy-KM-W0S"/>
+                                                        <constraint firstItem="N6e-nN-AJf" firstAttribute="leading" secondItem="yeW-vl-AqC" secondAttribute="trailing" constant="1" id="eMR-32-FRM"/>
+                                                        <constraint firstAttribute="width" constant="162" id="ooS-jB-H8X"/>
+                                                        <constraint firstItem="N6e-nN-AJf" firstAttribute="top" secondItem="nYG-hm-4uA" secondAttribute="top" constant="13" id="qv4-mC-EZZ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="nYG-hm-4uA" secondAttribute="bottom" id="BMv-Up-3Rj"/>
+                                            <constraint firstAttribute="trailing" secondItem="nYG-hm-4uA" secondAttribute="trailing" id="kEy-sT-YPp"/>
+                                            <constraint firstItem="nYG-hm-4uA" firstAttribute="leading" secondItem="R8Y-0S-6Yd" secondAttribute="leading" id="lfy-WQ-OjF"/>
+                                            <constraint firstItem="nYG-hm-4uA" firstAttribute="top" secondItem="R8Y-0S-6Yd" secondAttribute="top" id="sLJ-xD-1QU"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="answerLabel" destination="yeW-vl-AqC" id="egc-cU-14b"/>
+                                            <outlet property="checkImage" destination="N6e-nN-AJf" id="Xk0-E9-FKK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnswersLoadingCell" id="8co-Q1-QnH" customClass="AnswersLoadingCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="213" y="0.0" width="162" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-jT-3xV">
+                                                    <rect key="frame" x="10" y="20" width="142" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="FDQ-jT-3xV" firstAttribute="top" secondItem="8co-Q1-QnH" secondAttribute="top" constant="20" id="1Xg-3J-jpV"/>
+                                            <constraint firstItem="FDQ-jT-3xV" firstAttribute="leading" secondItem="8co-Q1-QnH" secondAttribute="leading" constant="10" id="7zc-fm-n9l"/>
+                                            <constraint firstAttribute="trailing" secondItem="FDQ-jT-3xV" secondAttribute="trailing" constant="10" id="ohI-cw-8aR"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnswersErrorCell" id="ZdH-I3-McX" customClass="AnswersErrorCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71" width="162" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Zt-gPE">
+                                                    <rect key="frame" x="10" y="20" width="142" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Yye-Zt-gPE" secondAttribute="trailing" constant="10" id="Q8d-f6-qys"/>
+                                            <constraint firstItem="Yye-Zt-gPE" firstAttribute="top" secondItem="ZdH-I3-McX" secondAttribute="top" constant="20" id="jyY-Uw-FpW"/>
+                                            <constraint firstItem="Yye-Zt-gPE" firstAttribute="leading" secondItem="ZdH-I3-McX" secondAttribute="leading" constant="10" id="uFP-jU-bci"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnswersNoResultCell" id="tKq-m6-q7j" customClass="AnswersNoResultCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="213" y="71" width="162" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8t8-a6-q3a">
+                                                    <rect key="frame" x="10" y="20" width="142" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="8t8-a6-q3a" firstAttribute="leading" secondItem="tKq-m6-q7j" secondAttribute="leading" constant="10" id="28C-Zu-zo2"/>
+                                            <constraint firstItem="8t8-a6-q3a" firstAttribute="top" secondItem="tKq-m6-q7j" secondAttribute="top" constant="20" id="2Wk-j1-OMD"/>
+                                            <constraint firstAttribute="trailing" secondItem="8t8-a6-q3a" secondAttribute="trailing" constant="10" id="xwM-87-h9z"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="28t-xE-Vm6" id="FxF-wR-y8h"/>
+                                    <outlet property="delegate" destination="28t-xE-Vm6" id="9pe-Dl-FkU"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70W-MU-d6a">
                                 <rect key="frame" x="2" y="617" width="353" height="30"/>
@@ -265,13 +372,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="d6F-JU-F3m" id="0E6-Pl-pcd"/>
                         <outlet property="questionLabel" destination="tbz-3n-7MO" id="dcd-kF-ZV8"/>
                         <outlet property="validateButton" destination="70W-MU-d6a" id="zX3-rS-KGn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxl-Qg-J5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2559" y="77"/>
+            <point key="canvasLocation" x="2558.5" y="76.5"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Lqy-lc-xaU">

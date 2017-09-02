@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesColectionViewDataSourceDelegate {
+class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesCollectionViewDataSourceDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - Variables
-    private var dataSource : QuizzesColectionViewDataSource = QuizzesColectionViewDataSource()
+    private var dataSource : QuizzesCollectionViewDataSource = QuizzesCollectionViewDataSource()
     
     //MARK: - Life cycle
     override func viewDidLoad() {

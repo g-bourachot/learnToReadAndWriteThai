@@ -36,17 +36,10 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
     }
     
     private func add(asChildViewController viewController: UIViewController) {
-        // Add Child View Controller
         addChildViewController(viewController)
-        
-        // Add Child View as Subview
         view.addSubview(viewController.view)
-        
-        // Configure Child View
         viewController.view.frame = view.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        // Notify Child View Controller
         viewController.didMove(toParentViewController: self)
     }
 

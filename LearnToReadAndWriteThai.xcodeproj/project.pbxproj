@@ -19,14 +19,14 @@
 		27D74FB71F0E81FA00109078 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FB61F0E81FA00109078 /* Level.swift */; };
 		27D74FB91F0E834B00109078 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D74FB81F0E834B00109078 /* Media.swift */; };
 		340A13101F5ACABF00FD71E0 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A130F1F5ACABF00FD71E0 /* QuestionViewController.swift */; };
-		340A13131F5ACD0200FD71E0 /* AnswersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A13121F5ACD0200FD71E0 /* AnswersCollectionViewCell.swift */; };
+		340A13131F5ACD0200FD71E0 /* AnswersCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A13121F5ACD0200FD71E0 /* AnswersCells.swift */; };
 		340A13151F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A13141F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift */; };
 		344AD7061F2DD60000E8033E /* JsonAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7051F2DD60000E8033E /* JsonAnswer.swift */; };
 		344AD7081F2DE53100E8033E /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7071F2DE53100E8033E /* DataManagerTests.swift */; };
 		344AD7101F2DE85500E8033E /* CoursesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD70F1F2DE85500E8033E /* CoursesListViewController.swift */; };
 		344AD7121F2DE86B00E8033E /* QuizzesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7111F2DE86B00E8033E /* QuizzesListViewController.swift */; };
 		344AD7151F2E096300E8033E /* QuizzesCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7141F2E096300E8033E /* QuizzesCells.swift */; };
-		344AD7171F2E09E000E8033E /* QuizzesColectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7161F2E09E000E8033E /* QuizzesColectionViewDataSource.swift */; };
+		344AD7171F2E09E000E8033E /* QuizzesCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7161F2E09E000E8033E /* QuizzesCollectionViewDataSource.swift */; };
 		345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E066F1F24C03D00C2A42A /* JsonLevel.swift */; };
 		345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E06721F24DEDC00C2A42A /* JsonQuestion.swift */; };
 		3485720D1F125A4400E407C5 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720C1F125A4400E407C5 /* RequestBuilder.swift */; };
@@ -62,14 +62,14 @@
 		27D74FB61F0E81FA00109078 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = Models/Level.swift; sourceTree = "<group>"; };
 		27D74FB81F0E834B00109078 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Media.swift; path = Models/Media.swift; sourceTree = "<group>"; };
 		340A130F1F5ACABF00FD71E0 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = ViewControllers/QuestionViewController.swift; sourceTree = "<group>"; };
-		340A13121F5ACD0200FD71E0 /* AnswersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnswersCollectionViewCell.swift; path = ViewControllers/AnswersCollectionView/AnswersCollectionViewCell.swift; sourceTree = "<group>"; };
+		340A13121F5ACD0200FD71E0 /* AnswersCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnswersCells.swift; path = ViewControllers/AnswersCollectionView/AnswersCells.swift; sourceTree = "<group>"; };
 		340A13141F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnswersCollectionViewDataSource.swift; path = ViewControllers/AnswersCollectionView/AnswersCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		344AD7051F2DD60000E8033E /* JsonAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonAnswer.swift; path = Models/JsonDecodeModels/JsonAnswer.swift; sourceTree = "<group>"; };
 		344AD7071F2DE53100E8033E /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
 		344AD70F1F2DE85500E8033E /* CoursesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoursesListViewController.swift; path = ViewControllers/CoursesListViewController.swift; sourceTree = "<group>"; };
 		344AD7111F2DE86B00E8033E /* QuizzesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesListViewController.swift; path = ViewControllers/QuizzesListViewController.swift; sourceTree = "<group>"; };
 		344AD7141F2E096300E8033E /* QuizzesCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesCells.swift; path = ViewControllers/QuizzesCollectionView/QuizzesCells.swift; sourceTree = "<group>"; };
-		344AD7161F2E09E000E8033E /* QuizzesColectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesColectionViewDataSource.swift; path = ViewControllers/QuizzesCollectionView/QuizzesColectionViewDataSource.swift; sourceTree = "<group>"; };
+		344AD7161F2E09E000E8033E /* QuizzesCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzesCollectionViewDataSource.swift; path = ViewControllers/QuizzesCollectionView/QuizzesCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		345E066F1F24C03D00C2A42A /* JsonLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonLevel.swift; path = Models/JsonDecodeModels/JsonLevel.swift; sourceTree = "<group>"; };
 		345E06721F24DEDC00C2A42A /* JsonQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonQuestion.swift; path = Models/JsonDecodeModels/JsonQuestion.swift; sourceTree = "<group>"; };
 		3485720C1F125A4400E407C5 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestBuilder.swift; path = API/RequestBuilder.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		340A13111F5ACC7500FD71E0 /* AnswersCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				340A13121F5ACD0200FD71E0 /* AnswersCollectionViewCell.swift */,
+				340A13121F5ACD0200FD71E0 /* AnswersCells.swift */,
 				340A13141F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift */,
 			);
 			name = AnswersCollectionView;
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				344AD7141F2E096300E8033E /* QuizzesCells.swift */,
-				344AD7161F2E09E000E8033E /* QuizzesColectionViewDataSource.swift */,
+				344AD7161F2E09E000E8033E /* QuizzesCollectionViewDataSource.swift */,
 			);
 			name = QuizzesColletionView;
 			sourceTree = "<group>";
@@ -326,11 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344AD7171F2E09E000E8033E /* QuizzesColectionViewDataSource.swift in Sources */,
+				344AD7171F2E09E000E8033E /* QuizzesCollectionViewDataSource.swift in Sources */,
 				27D74FB71F0E81FA00109078 /* Level.swift in Sources */,
 				344AD7101F2DE85500E8033E /* CoursesListViewController.swift in Sources */,
 				344AD7061F2DD60000E8033E /* JsonAnswer.swift in Sources */,
-				340A13131F5ACD0200FD71E0 /* AnswersCollectionViewCell.swift in Sources */,
+				340A13131F5ACD0200FD71E0 /* AnswersCells.swift in Sources */,
 				27D74FB11F0E81C900109078 /* Question.swift in Sources */,
 				345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */,
 				27D74FB91F0E834B00109078 /* Media.swift in Sources */,
