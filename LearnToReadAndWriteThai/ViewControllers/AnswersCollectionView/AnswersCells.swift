@@ -54,14 +54,6 @@ class AnswersCollectionViewCell: UICollectionViewCell {
     
 }
 
-class AnswersLoadingCell : UICollectionViewCell {
-    
-}
-
-class AnswersErrorCell : UICollectionViewCell {
-    
-}
-
 class AnswersNoResultCell : UICollectionViewCell {
     
 }

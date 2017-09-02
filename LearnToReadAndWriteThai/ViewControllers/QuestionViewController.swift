@@ -64,12 +64,6 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource {
         let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
         
         switch cellModel {
-        case .loading:
-            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersLoadingCell", for: indexPath) as! AnswersLoadingCell
-            return cell
-        case .error:
-            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersErrorCell", for: indexPath) as! AnswersErrorCell
-            return cell
         case .noResult:
             let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersNoResultCell", for: indexPath) as! AnswersNoResultCell
             return cell

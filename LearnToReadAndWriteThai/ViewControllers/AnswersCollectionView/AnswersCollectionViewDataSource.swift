@@ -12,8 +12,6 @@ class AnswersCollectionViewDataSource {
     enum CellModel {
         case result(Answer)
         case noResult
-        case error
-        case loading
     }
     
     //MARK: - Variables
@@ -23,7 +21,12 @@ class AnswersCollectionViewDataSource {
     
     //MARK: - Functions
     func refresh(){
-        content = self.question.answers.map(CellModel.result)
+        if self.question.answers.count > 0 {
+            content = self.question.answers.map(CellModel.result)
+        }else {
+            content = [CellModel.noResult]
+        }
+        
     }
     
     func itemAtIndex(index : Int) -> CellModel {
