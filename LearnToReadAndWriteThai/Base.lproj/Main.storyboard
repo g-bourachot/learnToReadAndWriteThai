@@ -248,7 +248,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-nN-AJf">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-nN-AJf">
                                                             <rect key="frame" x="121" y="13" width="31" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="nfh-NU-EXw"/>
@@ -256,7 +256,6 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="N6e-nN-AJf" secondAttribute="trailing" constant="10" id="Hc1-by-HCj"/>
                                                         <constraint firstItem="yeW-vl-AqC" firstAttribute="leading" secondItem="nYG-hm-4uA" secondAttribute="leading" constant="10" id="QUq-Gf-43T"/>
@@ -278,6 +277,7 @@
                                         <connections>
                                             <outlet property="answerLabel" destination="yeW-vl-AqC" id="egc-cU-14b"/>
                                             <outlet property="checkImage" destination="N6e-nN-AJf" id="Xk0-E9-FKK"/>
+                                            <outlet property="containerView" destination="nYG-hm-4uA" id="d3b-nZ-yVt"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnswersNoResultCell" id="tKq-m6-q7j" customClass="AnswersNoResultCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">

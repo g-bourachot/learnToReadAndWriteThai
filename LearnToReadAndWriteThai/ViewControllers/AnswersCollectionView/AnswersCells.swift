@@ -27,6 +27,7 @@ class AnswersCollectionViewCell: UICollectionViewCell {
     //MARK: - IBOutlets
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var containerView: UIView!
     
     //MARK: - Functions
     func setUpCell(with answer: Answer) {
@@ -35,20 +36,30 @@ class AnswersCollectionViewCell: UICollectionViewCell {
         }else {
             self.answerLabel.text = ""
         }
+        self.state = .initial
         self.contentView.layer.shadowColor = UIColor.black.cgColor
         self.contentView.layer.shadowOpacity = 1
         self.contentView.layer.shadowOffset = CGSize.zero
         self.contentView.layer.shadowRadius = 10
     }
     
+    func toggleState(){
+        if case .initial = self.state {
+            self.state = .selected
+            
+        } else if case .selected = self.state {
+            self.state = .initial
+        }
+    }
+    
     private func refresh() {
         switch self.state {
         case .initial:
-            self.checkImage = nil
+            self.checkImage.image = nil
         case .selected:
-            self.checkImage = nil
+            self.checkImage.image = UIImage.init(named: "check")
         default:
-            self.checkImage = nil
+            break
         }
     }
     

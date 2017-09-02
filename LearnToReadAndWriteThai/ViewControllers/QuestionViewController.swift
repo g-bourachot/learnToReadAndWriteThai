@@ -12,7 +12,7 @@ protocol QuestionViewControllerDelegate : class {
     func didValidateQuestion()
 }
 
-class QuestionViewController : UIViewController, UICollectionViewDataSource {
+class QuestionViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     //MARK: - Variables
     var presentedQuestion: Question!
@@ -20,6 +20,7 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource {
     
     //MARK: - Variables
     private var dataSource : AnswersCollectionViewDataSource = AnswersCollectionViewDataSource()
+    private var showCorrection : Bool = false
     
     //MARK: - IBOutlets
     @IBOutlet weak var questionLabel: UILabel!
@@ -94,5 +95,18 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource {
     
     func errorOccured(error: Error) {
         print(error)
+    }
+    
+    //MARK: - UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
+        switch cellModel {
+        case .result(_):
+            let cell = self.collectionView.cellForItem(at: indexPath) as! AnswersCollectionViewCell
+            cell.toggleState()
+        default:
+            break
+        }
+        
     }
 }
