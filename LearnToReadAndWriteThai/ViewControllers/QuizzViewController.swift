@@ -44,10 +44,13 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
     }
 
     //MARK: - QuestionViewControllerDelegate
-    func didValidateQuestion() {
+    func didValidateQuestion(isRight: Bool) {
+        if isRight {
+            self.presentedQuizz.currentScore += 1
+        }
         questionIndex += 1
         if questionIndex < presentedQuizz.questions.count {
-            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex])
+            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex], score: self.presentedQuizz.currentScore, numberOfQuestion: self.presentedQuizz.questions.count)
         }
     }
     

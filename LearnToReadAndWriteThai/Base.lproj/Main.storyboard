@@ -216,14 +216,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbz-3n-7MO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@score " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZx-Lu-Ct6">
                                 <rect key="frame" x="20" y="30" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbz-3n-7MO">
+                                <rect key="frame" x="20" y="60" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-JU-F3m">
-                                <rect key="frame" x="0.0" y="71" width="375" height="544"/>
+                                <rect key="frame" x="0.0" y="101" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vBO-4N-GuB">
                                     <size key="itemSize" width="162" height="61"/>
@@ -317,21 +323,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xZx-Lu-Ct6" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" constant="20" id="5Cz-ho-ZEj"/>
                             <constraint firstAttribute="trailing" secondItem="tbz-3n-7MO" secondAttribute="trailing" constant="20" id="7je-MM-bFD"/>
                             <constraint firstItem="70W-MU-d6a" firstAttribute="top" secondItem="d6F-JU-F3m" secondAttribute="bottom" constant="2" id="Ari-kh-6O5"/>
                             <constraint firstAttribute="trailing" secondItem="70W-MU-d6a" secondAttribute="trailing" constant="20" id="RRh-dj-mgV"/>
                             <constraint firstItem="RLs-Jb-Zyd" firstAttribute="top" secondItem="70W-MU-d6a" secondAttribute="bottom" constant="20" id="TXi-vS-Ac1"/>
-                            <constraint firstItem="tbz-3n-7MO" firstAttribute="top" secondItem="VE2-Ip-6Md" secondAttribute="bottom" constant="10" id="U3w-46-DOq"/>
                             <constraint firstItem="d6F-JU-F3m" firstAttribute="top" secondItem="tbz-3n-7MO" secondAttribute="bottom" constant="20" id="WNL-Ve-zeo"/>
+                            <constraint firstAttribute="trailing" secondItem="xZx-Lu-Ct6" secondAttribute="trailing" constant="20" id="Xhu-OX-c0A"/>
+                            <constraint firstItem="xZx-Lu-Ct6" firstAttribute="top" secondItem="VE2-Ip-6Md" secondAttribute="bottom" constant="10" id="Yol-wD-dwI"/>
                             <constraint firstAttribute="trailing" secondItem="d6F-JU-F3m" secondAttribute="trailing" id="Z4e-6e-Jx9"/>
                             <constraint firstItem="70W-MU-d6a" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" constant="2" id="bqd-sU-oQo"/>
                             <constraint firstItem="tbz-3n-7MO" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" constant="20" id="gfR-2X-giv"/>
                             <constraint firstItem="d6F-JU-F3m" firstAttribute="leading" secondItem="h4P-rq-tKr" secondAttribute="leading" id="p8B-hJ-eYP"/>
+                            <constraint firstItem="tbz-3n-7MO" firstAttribute="top" secondItem="xZx-Lu-Ct6" secondAttribute="bottom" constant="9" id="ywS-Dq-fdV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="d6F-JU-F3m" id="0E6-Pl-pcd"/>
                         <outlet property="questionLabel" destination="tbz-3n-7MO" id="dcd-kF-ZV8"/>
+                        <outlet property="scoreLabel" destination="xZx-Lu-Ct6" id="FMb-VJ-OnK"/>
                         <outlet property="validateButton" destination="70W-MU-d6a" id="zX3-rS-KGn"/>
                     </connections>
                 </viewController>

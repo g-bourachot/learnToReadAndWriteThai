@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuestionViewControllerDelegate : class {
-    func didValidateQuestion()
+    func didValidateQuestion(isRight: Bool)
 }
 
 class QuestionViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -21,11 +21,13 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     //MARK: - Variables
     private var dataSource : AnswersCollectionViewDataSource = AnswersCollectionViewDataSource()
     private var showCorrection : Bool = false
+    private var selectedAnswers: [Answer] = []
     
     //MARK: - IBOutlets
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var validateButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -35,7 +37,9 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     }
     
     //MARK: - View controller functions
-    func setUp(question: Question) {
+    func setUp(question: Question, score: Int, numberOfQuestion: Int) {
+        self.scoreLabel.text = "\(score) / \(numberOfQuestion)"
+        self.selectedAnswers.removeAll()
         self.presentedQuestion = question
         self.dataSource.question = presentedQuestion
         self.dataSource.refresh()
@@ -83,7 +87,11 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     
     //MARK: - IBAction
     @IBAction func validateAction(_ sender: UIButton) {
-        self.delegate?.didValidateQuestion()
+        if selectedAnswers == self.presentedQuestion.getRightAnswers() {
+            self.delegate?.didValidateQuestion(isRight: true)
+        } else {
+            self.delegate?.didValidateQuestion(isRight: false)
+        }
     }
     
     //MARK: - AnswersCollectionViewDataSourceDelegate
@@ -101,12 +109,19 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
         switch cellModel {
-        case .result(_):
+        case .result(let answer):
             let cell = self.collectionView.cellForItem(at: indexPath) as! AnswersCollectionViewCell
             cell.toggleState()
+            switch cell.state {
+            case .selected :
+                self.selectedAnswers.append(answer)
+            default:
+                if let index =  self.selectedAnswers.index(where: { $0.identifier == answer.identifier}) {
+                    self.selectedAnswers.remove(at: index)
+                }
+            }
         default:
             break
         }
-        
     }
 }

@@ -8,20 +8,24 @@
 
 import Foundation
 
-struct Answer {
+struct Answer: Equatable{
     //MARK: - Variables
+    typealias Identifier = Int
+    let identifier: Identifier
     let isRight: Bool
     let characters : String?
     let media : Media?
         
     //MARK: - Life cycle functions
-    init(media : Media?, isRight: Bool, characters: String?) {
+    init(identifier: Answer.Identifier, media : Media?, isRight: Bool, characters: String?) {
+        self.identifier = identifier
         self.media = media
         self.isRight = isRight
         self.characters = characters
     }
     
     init(jsonAnswer: JsonAnswer) {
+        self.identifier = (jsonAnswer.identifier)
         self.isRight = (jsonAnswer.isRight == 1)
         self.characters = jsonAnswer.characters
         if let mediaPath = jsonAnswer.mediaUrl, let mediaURL = URL.init(string: mediaPath) {
@@ -29,6 +33,11 @@ struct Answer {
         }else {
             self.media = nil
         }
+    }
+    
+    //MARK: - Equatable
+    static func ==(lhs: Answer, rhs: Answer)->Bool {
+        return lhs.identifier == rhs.identifier
     }
     
 }

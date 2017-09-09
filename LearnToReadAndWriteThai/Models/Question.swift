@@ -49,4 +49,7 @@ struct Question {
         self.answers = jsonQuestion.answers.map({ Answer.init(jsonAnswer: $0)})
     }
     
+    func getRightAnswers() ->[Answer] {
+        return self.answers.filter( {$0.isRight})
+    }
 }
