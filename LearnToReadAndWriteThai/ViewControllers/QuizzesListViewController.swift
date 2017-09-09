@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesCollectionViewDataSourceDelegate {
+class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesCollectionViewDataSourceDelegate, QuizzViewControllerDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -69,6 +69,7 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
                 if let quizz = generatedQuizz {
                     let quizzViewController = self.storyboard!.instantiateViewController(withIdentifier: "QuizzViewController") as! QuizzViewController
                     quizzViewController.presentedQuizz = quizz
+                    quizzViewController.delegate = self
                     self.present(quizzViewController, animated: true, completion: nil)
                 }
                 
@@ -87,5 +88,10 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
     
     func errorOccured(error: Error) {
         print(error)
+    }
+    
+    //MARK: - QuizzViewControllerDelegate
+    func quizzIsFinished() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

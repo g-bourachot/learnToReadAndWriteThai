@@ -17,7 +17,7 @@ struct Quizz {
     }
     
     let questions: [Question]
-    var currentScore: Int
+    var currentScore: Int = 0
     var state : State
 }
 

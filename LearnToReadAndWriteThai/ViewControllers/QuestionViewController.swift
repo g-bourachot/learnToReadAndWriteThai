@@ -29,13 +29,6 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    //MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.dataSource.question = presentedQuestion
-        self.dataSource.refresh()
-    }
-    
     //MARK: - View controller functions
     func setUp(question: Question, score: Int, numberOfQuestion: Int) {
         self.scoreLabel.text = "\(score) / \(numberOfQuestion)"

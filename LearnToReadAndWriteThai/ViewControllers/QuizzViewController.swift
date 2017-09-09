@@ -7,9 +7,13 @@
 //
 
 import UIKit
+protocol QuizzViewControllerDelegate : class {
+    func quizzIsFinished()
+}
 
 class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
 
+    weak var delegate : QuizzViewControllerDelegate? = nil
     var presentedQuizz : Quizz!
     private var presentedQuestionViewController: QuestionViewController? = nil
     private var questionIndex: Int = 0
@@ -29,6 +33,7 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
             questionViewController.delegate = self
             self.presentedQuestionViewController = questionViewController
             self.add(asChildViewController: questionViewController)
+            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex], score: self.presentedQuizz.currentScore, numberOfQuestion: self.presentedQuizz.questions.count)
         case .finished:
             break
         }
@@ -51,6 +56,8 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
         questionIndex += 1
         if questionIndex < presentedQuizz.questions.count {
             self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex], score: self.presentedQuizz.currentScore, numberOfQuestion: self.presentedQuizz.questions.count)
+        }else {
+            self.delegate?.quizzIsFinished()
         }
     }
     
