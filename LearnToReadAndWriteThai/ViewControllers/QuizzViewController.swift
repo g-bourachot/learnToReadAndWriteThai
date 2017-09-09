@@ -33,7 +33,8 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
             questionViewController.delegate = self
             self.presentedQuestionViewController = questionViewController
             self.add(asChildViewController: questionViewController)
-            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex], score: self.presentedQuizz.currentScore, numberOfQuestion: self.presentedQuizz.questions.count)
+            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex])
+            self.presentedQuestionViewController?.scoreLabel.text = "\(self.presentedQuizz.currentScore) / \(self.presentedQuizz.questions.count)"
         case .finished:
             break
         }
@@ -52,10 +53,14 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
     func didValidateQuestion(isRight: Bool) {
         if isRight {
             self.presentedQuizz.currentScore += 1
+            self.presentedQuestionViewController?.scoreLabel.text = "\(self.presentedQuizz.currentScore) / \(self.presentedQuizz.questions.count)"
         }
+    }
+    
+    func nextQuestion() {
         questionIndex += 1
         if questionIndex < presentedQuizz.questions.count {
-            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex], score: self.presentedQuizz.currentScore, numberOfQuestion: self.presentedQuizz.questions.count)
+            self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex])
         }else {
             self.delegate?.quizzIsFinished()
         }

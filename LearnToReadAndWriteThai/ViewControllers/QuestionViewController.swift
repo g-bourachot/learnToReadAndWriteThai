@@ -10,6 +10,7 @@ import UIKit
 
 protocol QuestionViewControllerDelegate : class {
     func didValidateQuestion(isRight: Bool)
+    func nextQuestion()
 }
 
 class QuestionViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -30,8 +31,7 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var scoreLabel: UILabel!
     
     //MARK: - View controller functions
-    func setUp(question: Question, score: Int, numberOfQuestion: Int) {
-        self.scoreLabel.text = "\(score) / \(numberOfQuestion)"
+    func setUp(question: Question) {
         self.selectedAnswers.removeAll()
         self.presentedQuestion = question
         self.dataSource.question = presentedQuestion
@@ -49,6 +49,22 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
         self.collectionView?.reloadData()
     }
     
+    private func setUp(cell: AnswersCollectionViewCell, with answer: Answer) {
+        cell.setUpCell(with: answer)
+        if self.showCorrection {
+            switch (cell.state, answer.isRight) {
+            case ( .selected, true ):
+                cell.state = .rightSelected
+            case ( .selected, false):
+                cell.state = .wrongSelected
+            case ( .initial, true):
+                cell.state = .rightNotSelected
+            default:
+                break
+            }
+        }
+    }
+    
     //MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -60,14 +76,13 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = self.dataSource.itemAtIndex(index: indexPath.row)
-        
         switch cellModel {
         case .noResult:
             let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersNoResultCell", for: indexPath) as! AnswersNoResultCell
             return cell
         case .result(let answer):
             let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "AnswersCollectionViewCell", for: indexPath) as! AnswersCollectionViewCell
-            cell.setUpCell(with: answer)
+            self.setUp(cell: cell, with: answer)
             return cell
         }
     }
@@ -80,10 +95,13 @@ class QuestionViewController : UIViewController, UICollectionViewDataSource, UIC
     
     //MARK: - IBAction
     @IBAction func validateAction(_ sender: UIButton) {
-        if selectedAnswers == self.presentedQuestion.getRightAnswers() {
-            self.delegate?.didValidateQuestion(isRight: true)
-        } else {
-            self.delegate?.didValidateQuestion(isRight: false)
+        if !self.showCorrection {
+            self.showCorrection = true
+            self.collectionView?.reloadData()
+            self.delegate?.didValidateQuestion(isRight: selectedAnswers == self.presentedQuestion.getRightAnswers())
+        }else {
+            self.showCorrection = false
+            self.delegate?.nextQuestion()
         }
     }
     

@@ -13,7 +13,7 @@ class RequestBuilder {
         case wrongURL
     }
     
-    static let baseUrlString = URL(string: "http://mac-de-guillaume.local:8080")
+    static let baseUrlString = URL(string: "http://learnthai.gbourachot.webfactional.com")
     
     static func getUserRequest(identifier : User.Identifier) throws -> URLRequest{
         if let url = baseUrlString?.appendingPathComponent("/user/\(identifier)") {

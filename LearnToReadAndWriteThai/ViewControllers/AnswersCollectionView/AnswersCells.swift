@@ -24,6 +24,8 @@ class AnswersCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var isRight: Bool = false
+    
     //MARK: - IBOutlets
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
@@ -37,10 +39,11 @@ class AnswersCollectionViewCell: UICollectionViewCell {
             self.answerLabel.text = ""
         }
         self.state = .initial
-        self.contentView.layer.shadowColor = UIColor.black.cgColor
-        self.contentView.layer.shadowOpacity = 1
-        self.contentView.layer.shadowOffset = CGSize.zero
-        self.contentView.layer.shadowRadius = 10
+        self.isRight = answer.isRight
+        self.containerView.layer.shadowColor = UIColor.black.cgColor
+        self.containerView.layer.shadowOpacity = 1
+        self.containerView.layer.shadowOffset = CGSize.zero
+        self.containerView.layer.shadowRadius = 10
     }
     
     func toggleState(){
@@ -56,10 +59,19 @@ class AnswersCollectionViewCell: UICollectionViewCell {
         switch self.state {
         case .initial:
             self.checkImage.image = nil
+            self.containerView.backgroundColor = UIColor.white
         case .selected:
+            self.checkImage.image = nil
+            self.containerView.backgroundColor = UIColor.gray
+        case .rightSelected:
             self.checkImage.image = UIImage.init(named: "check")
-        default:
-            break
+            self.containerView.backgroundColor = UIColor.green
+        case .rightNotSelected:
+            self.containerView.backgroundColor = UIColor.white
+            self.checkImage.image = UIImage.init(named: "check")
+        case .wrongSelected:
+            self.checkImage.image = nil
+            self.containerView.backgroundColor = UIColor.red
         }
     }
     

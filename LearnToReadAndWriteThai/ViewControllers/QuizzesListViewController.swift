@@ -63,7 +63,6 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
                 //TODO: Stop spinning
                 if error != nil {
                     //TODO: Present error
-                    print("fuck me")
                 }
                 
                 if let quizz = generatedQuizz {
@@ -71,8 +70,7 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
                     quizzViewController.presentedQuizz = quizz
                     quizzViewController.delegate = self
                     self.present(quizzViewController, animated: true, completion: nil)
-                }
-                
+                }                
             })
         default:
             break

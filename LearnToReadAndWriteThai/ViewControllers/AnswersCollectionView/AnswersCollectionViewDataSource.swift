@@ -32,15 +32,4 @@ class AnswersCollectionViewDataSource {
     func itemAtIndex(index : Int) -> CellModel {
         return self.content[index]
     }
-    
-    func getSelectedAnswers() -> [Answer] {
-        let selectedCells: [CellModel] = []
-        for cellModel in self.content {
-            if case CellModel.result(let answer) = cellModel {
-                answer.isRight
-            }
-        }
-        return []
-    }
-    
 }
