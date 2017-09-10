@@ -58,7 +58,7 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
         case .result(let level):
             //TODO: Print Loading spinning
             
-            let quizzGenerator = QuizzGenerator(level: level, numberOfQuestion: 5)
+            let quizzGenerator = QuizzGenerator(level: level, numberOfQuestion: 10)
             quizzGenerator.generate(completionHandler: { (generatedQuizz, error) in
                 //TODO: Stop spinning
                 if error != nil {

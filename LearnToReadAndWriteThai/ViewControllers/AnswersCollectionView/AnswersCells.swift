@@ -43,7 +43,7 @@ class AnswersCollectionViewCell: UICollectionViewCell {
         self.containerView.layer.shadowColor = UIColor.black.cgColor
         self.containerView.layer.shadowOpacity = 1
         self.containerView.layer.shadowOffset = CGSize.zero
-        self.containerView.layer.shadowRadius = 10
+        self.containerView.layer.shadowRadius = 3
     }
     
     func toggleState(){
