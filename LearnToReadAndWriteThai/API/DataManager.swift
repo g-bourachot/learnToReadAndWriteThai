@@ -95,4 +95,39 @@ class DataManager {
         }
     }
     
+    static func getLessons(completionHandler: @escaping ([Lesson], Error?) -> Void) {
+        if let request = try? RequestBuilder.getLessonsRequest() {
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    let jsonLessons = try! decoder.decode([JsonLesson].self, from: data)
+                    let lessons = jsonLessons.map({ Lesson.init(jsonLesson: $0) })
+                    completionHandler(lessons,nil)
+                }
+                if let error = error {
+                    completionHandler([], error)
+                }
+            })
+            task.resume()
+        }
+    }
+    
+    static func getLesson(with identifier: Lesson.Identifier, completionHandler: @escaping (Lesson?, Error?) -> Void) {
+        if let request = try? RequestBuilder.getLessonRequest(identifier: identifier) {
+            let task = URLSession.shared.dataTask(with: request,
+                                                  completionHandler: { (data, response, error) in
+                                                    if let data = data {
+                                                        let decoder = JSONDecoder()
+                                                        let jsonLesson = try! decoder.decode(JsonLesson.self, from: data)
+                                                        let lesson = Lesson.init(jsonLesson: jsonLesson)
+                                                        completionHandler(lesson,nil)
+                                                    }
+                                                    if let error = error {
+                                                        completionHandler(nil, error)
+                                                    }
+            })
+            task.resume()
+        }
+    }
+    
 }

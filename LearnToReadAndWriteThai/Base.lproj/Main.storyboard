@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Quizzes-->
         <scene sceneID="tji-GR-B0r">
             <objects>
-                <viewController storyboardIdentifier="QuizzesListViewController" id="GIG-Ma-Jdd" customClass="QuizzesListViewController" customModule="LearnToReadAndWriteThai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizzesListViewController" title="Quizzes" id="GIG-Ma-Jdd" customClass="QuizzesListViewController" customModule="LearnToReadAndWriteThai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MGR-0R-MOV"/>
                         <viewControllerLayoutGuide type="bottom" id="xRr-9J-ays"/>
@@ -187,7 +188,7 @@
                             <constraint firstItem="4Om-yB-ukc" firstAttribute="leading" secondItem="yGD-Ww-dHd" secondAttribute="leading" id="t4Y-Hr-QxQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="mc9-87-Fb8"/>
+                    <tabBarItem key="tabBarItem" title="Exercices" id="mc9-87-Fb8"/>
                     <connections>
                         <outlet property="collectionView" destination="DHS-gj-9Sr" id="BxJ-wE-ze6"/>
                     </connections>
@@ -356,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="2558.5" y="76.5"/>
         </scene>
-        <!--Item 1-->
+        <!--Lessons-->
         <scene sceneID="Lqy-lc-xaU">
             <objects>
-                <viewController id="axW-RI-cm5" sceneMemberID="viewController">
+                <viewController title="Lessons" id="axW-RI-cm5" customClass="LessonsListViewController" customModule="LearnToReadAndWriteThai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Icj-Zz-WKP"/>
                         <viewControllerLayoutGuide type="bottom" id="PKZ-ig-QQ0"/>
@@ -367,9 +368,178 @@
                     <view key="view" contentMode="scaleToFill" id="J4c-Hi-lbN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9c-rG-hhW">
+                                <rect key="frame" x="26" y="30" width="323" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-JB-oRF">
+                                <rect key="frame" x="0.0" y="81" width="375" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="20" id="rg0-2a-3Hr">
+                                    <size key="itemSize" width="200" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LessonsCell" id="0jd-jf-8sS" customClass="LessonsCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="87.5" y="0.0" width="200" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDg-30-aoy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Level" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ure-aA-aEj">
+                                                            <rect key="frame" x="10" y="9.5" width="180" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ure-aA-aEj" secondAttribute="trailing" constant="10" id="0vp-Ub-KlF"/>
+                                                        <constraint firstItem="ure-aA-aEj" firstAttribute="centerY" secondItem="rDg-30-aoy" secondAttribute="centerY" id="1Lu-hs-ceb"/>
+                                                        <constraint firstItem="ure-aA-aEj" firstAttribute="leading" secondItem="rDg-30-aoy" secondAttribute="leading" constant="10" id="GvT-qQ-feE"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="rDg-30-aoy" secondAttribute="trailing" id="Jgt-Wx-NMH"/>
+                                            <constraint firstItem="rDg-30-aoy" firstAttribute="leading" secondItem="0jd-jf-8sS" secondAttribute="leading" id="OB5-dc-YZe"/>
+                                            <constraint firstItem="rDg-30-aoy" firstAttribute="top" secondItem="0jd-jf-8sS" secondAttribute="top" id="dtU-eJ-W1L"/>
+                                            <constraint firstAttribute="bottom" secondItem="rDg-30-aoy" secondAttribute="bottom" id="mQ9-dP-GkD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="ure-aA-aEj" id="vE0-FL-cpi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LessonsLoadingCell" id="bLn-Sv-9hy" customClass="LessonsLoadingCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="87.5" y="70" width="200" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thu-BS-ATz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk0-lh-PLD">
+                                                            <rect key="frame" x="62" y="9.5" width="76.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gk0-lh-PLD" firstAttribute="centerY" secondItem="thu-BS-ATz" secondAttribute="centerY" id="Qjz-N9-kvl"/>
+                                                        <constraint firstItem="gk0-lh-PLD" firstAttribute="centerX" secondItem="thu-BS-ATz" secondAttribute="centerX" id="v0Q-hA-MVF"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="thu-BS-ATz" secondAttribute="trailing" id="W0A-ld-5dV"/>
+                                            <constraint firstItem="thu-BS-ATz" firstAttribute="leading" secondItem="bLn-Sv-9hy" secondAttribute="leading" id="dIl-0T-fdu"/>
+                                            <constraint firstItem="thu-BS-ATz" firstAttribute="top" secondItem="bLn-Sv-9hy" secondAttribute="top" id="qQ2-uY-L1k"/>
+                                            <constraint firstAttribute="bottom" secondItem="thu-BS-ATz" secondAttribute="bottom" id="s7y-TO-dq8"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LessonsErrorCell" id="4xd-xP-vhk" customClass="LessonsErrorCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="87.5" y="140" width="200" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKB-eW-CrQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-0X-3pE">
+                                                            <rect key="frame" x="73.5" y="9.5" width="53" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="yc0-0X-3pE" firstAttribute="centerX" secondItem="wKB-eW-CrQ" secondAttribute="centerX" id="2Xd-fF-yeB"/>
+                                                        <constraint firstItem="yc0-0X-3pE" firstAttribute="centerY" secondItem="wKB-eW-CrQ" secondAttribute="centerY" id="Ngo-oI-djF"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wKB-eW-CrQ" secondAttribute="bottom" id="7lm-0f-kpg"/>
+                                            <constraint firstItem="wKB-eW-CrQ" firstAttribute="top" secondItem="4xd-xP-vhk" secondAttribute="top" id="Cft-8l-7bd"/>
+                                            <constraint firstAttribute="trailing" secondItem="wKB-eW-CrQ" secondAttribute="trailing" id="Ugd-bg-eee"/>
+                                            <constraint firstItem="wKB-eW-CrQ" firstAttribute="leading" secondItem="4xd-xP-vhk" secondAttribute="leading" id="laR-g1-Rc7"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LessonsNoResultCell" id="owV-oO-D4p" customClass="LessonsNoResultCell" customModule="LearnToReadAndWriteThai" customModuleProvider="target">
+                                        <rect key="frame" x="87.5" y="210" width="200" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4M-yA-xu5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@NoResult" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYX-QK-SU6">
+                                                            <rect key="frame" x="57.5" y="9.5" width="85" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="hYX-QK-SU6" firstAttribute="centerX" secondItem="b4M-yA-xu5" secondAttribute="centerX" id="dYG-vh-Irf"/>
+                                                        <constraint firstItem="hYX-QK-SU6" firstAttribute="centerY" secondItem="b4M-yA-xu5" secondAttribute="centerY" id="gaT-7Z-7oc"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="b4M-yA-xu5" firstAttribute="top" secondItem="owV-oO-D4p" secondAttribute="top" id="dfP-4d-UdW"/>
+                                            <constraint firstAttribute="bottom" secondItem="b4M-yA-xu5" secondAttribute="bottom" id="iXV-PQ-Yrl"/>
+                                            <constraint firstAttribute="trailing" secondItem="b4M-yA-xu5" secondAttribute="trailing" id="jLm-s0-Mft"/>
+                                            <constraint firstItem="b4M-yA-xu5" firstAttribute="leading" secondItem="owV-oO-D4p" secondAttribute="leading" id="kzE-rL-cCm"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="axW-RI-cm5" id="KpR-Xk-Naq"/>
+                                    <outlet property="delegate" destination="axW-RI-cm5" id="IDa-Lq-dgK"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="i3d-JB-oRF" secondAttribute="trailing" id="0M8-LJ-Nxi"/>
+                            <constraint firstItem="E9c-rG-hhW" firstAttribute="top" secondItem="Icj-Zz-WKP" secondAttribute="bottom" constant="10" id="4Dt-Ee-9O9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E9c-rG-hhW" secondAttribute="trailing" constant="10" id="HZI-1D-fI7"/>
+                            <constraint firstItem="i3d-JB-oRF" firstAttribute="leading" secondItem="J4c-Hi-lbN" secondAttribute="leading" id="Ihq-e8-qdM"/>
+                            <constraint firstItem="i3d-JB-oRF" firstAttribute="top" secondItem="E9c-rG-hhW" secondAttribute="bottom" constant="30" id="KnS-xJ-vfa"/>
+                            <constraint firstItem="E9c-rG-hhW" firstAttribute="leading" secondItem="J4c-Hi-lbN" secondAttribute="leadingMargin" constant="10" id="P64-vh-HkC"/>
+                            <constraint firstItem="PKZ-ig-QQ0" firstAttribute="top" secondItem="i3d-JB-oRF" secondAttribute="bottom" id="p1k-rD-gBu"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="zOJ-PX-UhS"/>
+                    <tabBarItem key="tabBarItem" title="Cours" id="zOJ-PX-UhS"/>
+                    <connections>
+                        <outlet property="collectionView" destination="i3d-JB-oRF" id="S9E-BB-QLV"/>
+                        <outlet property="titleLabel" destination="E9c-rG-hhW" id="g9C-IQ-O9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W68-Lw-8Vd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -49,4 +49,18 @@ class RequestBuilder {
         }
         throw Error.wrongURL
     }
+    
+    static func getLessonsRequest() throws -> URLRequest{
+        if let url = baseUrlString?.appendingPathComponent("/lessons") {
+            return URLRequest(url: url)
+        }
+        throw Error.wrongURL
+    }
+    
+    static func getLessonRequest(identifier : Lesson.Identifier) throws -> URLRequest{
+        if let url = baseUrlString?.appendingPathComponent("/lesson/\(identifier)") {
+            return URLRequest(url: url)
+        }
+        throw Error.wrongURL
+    }
 }
