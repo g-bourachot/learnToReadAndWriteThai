@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LessonsListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, LessonsCollectionViewDataSourceDelegate, LessonViewControllerDelegate {
+class LessonsListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, LessonsCollectionViewDataSourceDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -58,7 +58,11 @@ class LessonsListViewController : UIViewController, UICollectionViewDelegate, UI
         switch cellModel {
         case .result(let lesson):
             //TODO: Print Loading spinning
-            //TODO: Load lesson and present it
+            let lessonViewController = self.storyboard!.instantiateViewController(withIdentifier: "LessonViewController") as! LessonViewController
+            lessonViewController.htmlContent = lesson.content
+            lessonViewController.lessonName = lesson.name
+            
+            self.navigationController?.pushViewController(lessonViewController, animated: true)
             break
         default:
             break
@@ -74,10 +78,5 @@ class LessonsListViewController : UIViewController, UICollectionViewDelegate, UI
     
     func errorOccured(error: Error) {
         print(error)
-    }
-    
-    //MARK: - LessonsViewControllerDelegate
-    func closeLesson() {
-        self.dismiss(animated: true, completion: nil)
     }
 }
