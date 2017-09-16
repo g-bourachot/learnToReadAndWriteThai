@@ -24,6 +24,7 @@ struct Question {
     let characters : String?
     let media : Media?
     let answers : [Answer]
+    var isAnsweredRight : Bool?
     
     //MARK: - Life cycle functions
     init(identifier: Question.Identifier, type: QuestionType, level: Level.Identifier, characters: String?, media: Media?, answers: [Answer]) {

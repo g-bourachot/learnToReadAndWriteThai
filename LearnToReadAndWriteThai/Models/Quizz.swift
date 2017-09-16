@@ -16,7 +16,7 @@ struct Quizz {
         case finished
     }
     
-    let questions: [Question]
+    var questions: [Question]
     var currentScore: Int = 0
     var state : State
 }

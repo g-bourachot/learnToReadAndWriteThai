@@ -8,7 +8,7 @@
 
 import UIKit
 protocol QuizzViewControllerDelegate : class {
-    func quizzIsFinished()
+    func quizzIsFinished(quizz: Quizz)
 }
 
 class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
@@ -54,6 +54,9 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
         if isRight {
             self.presentedQuizz.currentScore += 1
             self.presentedQuestionViewController?.scoreLabel.text = "\(self.presentedQuizz.currentScore) / \(self.presentedQuizz.questions.count)"
+            self.presentedQuizz.questions[questionIndex].isAnsweredRight = true
+        }else {
+            self.presentedQuizz.questions[questionIndex].isAnsweredRight = false
         }
     }
     
@@ -62,7 +65,7 @@ class QuizzViewController : UIViewController, QuestionViewControllerDelegate {
         if questionIndex < presentedQuizz.questions.count {
             self.presentedQuestionViewController?.setUp(question: presentedQuizz.questions[questionIndex])
         }else {
-            self.delegate?.quizzIsFinished()
+            self.delegate?.quizzIsFinished(quizz: self.presentedQuizz)
         }
     }
     

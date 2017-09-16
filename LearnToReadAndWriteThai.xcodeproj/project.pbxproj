@@ -21,6 +21,9 @@
 		340A13101F5ACABF00FD71E0 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A130F1F5ACABF00FD71E0 /* QuestionViewController.swift */; };
 		340A13131F5ACD0200FD71E0 /* AnswersCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A13121F5ACD0200FD71E0 /* AnswersCells.swift */; };
 		340A13151F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A13141F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift */; };
+		3420D19F1F6D677E00F0CE95 /* QuizzScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420D19E1F6D677E00F0CE95 /* QuizzScoreViewController.swift */; };
+		3420D1A51F6D8D0E00F0CE95 /* QuizzScoreTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420D1A41F6D8D0E00F0CE95 /* QuizzScoreTableViewDataSource.swift */; };
+		3420D1A71F6D8F2600F0CE95 /* QuizzScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420D1A61F6D8F2600F0CE95 /* QuizzScoreTableViewCell.swift */; };
 		344AD7061F2DD60000E8033E /* JsonAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7051F2DD60000E8033E /* JsonAnswer.swift */; };
 		344AD7081F2DE53100E8033E /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD7071F2DE53100E8033E /* DataManagerTests.swift */; };
 		344AD7101F2DE85500E8033E /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AD70F1F2DE85500E8033E /* LessonsListViewController.swift */; };
@@ -33,6 +36,7 @@
 		3485720F1F125DEB00E407C5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720E1F125DEB00E407C5 /* DataManager.swift */; };
 		34924A3D1F5AD6B300DAD6A0 /* Quizz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34924A3C1F5AD6B300DAD6A0 /* Quizz.swift */; };
 		34924A3F1F5ADE8900DAD6A0 /* QuizzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34924A3E1F5ADE8900DAD6A0 /* QuizzViewController.swift */; };
+		34A11AD61F6D9844001C3F1A /* MutableCollection+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A11AD51F6D9844001C3F1A /* MutableCollection+Shuffle.swift */; };
 		34A38A3B1F69BA8500FCF134 /* LessonsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A38A3A1F69BA8500FCF134 /* LessonsCells.swift */; };
 		34A38A3D1F69BAA700FCF134 /* LessonsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A38A3C1F69BAA700FCF134 /* LessonsCollectionViewDataSource.swift */; };
 		34A38A3F1F69BB5600FCF134 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A38A3E1F69BB5600FCF134 /* Lesson.swift */; };
@@ -69,6 +73,9 @@
 		340A130F1F5ACABF00FD71E0 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = ViewControllers/QuestionViewController.swift; sourceTree = "<group>"; };
 		340A13121F5ACD0200FD71E0 /* AnswersCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnswersCells.swift; path = ViewControllers/AnswersCollectionView/AnswersCells.swift; sourceTree = "<group>"; };
 		340A13141F5ACD6300FD71E0 /* AnswersCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnswersCollectionViewDataSource.swift; path = ViewControllers/AnswersCollectionView/AnswersCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		3420D19E1F6D677E00F0CE95 /* QuizzScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzScoreViewController.swift; path = ViewControllers/QuizzScoreViewController.swift; sourceTree = "<group>"; };
+		3420D1A41F6D8D0E00F0CE95 /* QuizzScoreTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzScoreTableViewDataSource.swift; path = ViewControllers/QuizzScoreTableView/QuizzScoreTableViewDataSource.swift; sourceTree = "<group>"; };
+		3420D1A61F6D8F2600F0CE95 /* QuizzScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzScoreTableViewCell.swift; path = ViewControllers/QuizzScoreTableView/QuizzScoreTableViewCell.swift; sourceTree = "<group>"; };
 		344AD7051F2DD60000E8033E /* JsonAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonAnswer.swift; path = Models/JsonDecodeModels/JsonAnswer.swift; sourceTree = "<group>"; };
 		344AD7071F2DE53100E8033E /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
 		344AD70F1F2DE85500E8033E /* LessonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LessonsListViewController.swift; path = ViewControllers/LessonsListViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 		3485720E1F125DEB00E407C5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = API/DataManager.swift; sourceTree = "<group>"; };
 		34924A3C1F5AD6B300DAD6A0 /* Quizz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Quizz.swift; path = Models/Quizz.swift; sourceTree = "<group>"; };
 		34924A3E1F5ADE8900DAD6A0 /* QuizzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzViewController.swift; path = ViewControllers/QuizzViewController.swift; sourceTree = "<group>"; };
+		34A11AD51F6D9844001C3F1A /* MutableCollection+Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MutableCollection+Shuffle.swift"; path = "Additions/MutableCollection+Shuffle.swift"; sourceTree = "<group>"; };
 		34A38A3A1F69BA8500FCF134 /* LessonsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LessonsCells.swift; path = ViewControllers/LessonsCollectionView/LessonsCells.swift; sourceTree = "<group>"; };
 		34A38A3C1F69BAA700FCF134 /* LessonsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LessonsCollectionViewDataSource.swift; path = ViewControllers/LessonsCollectionView/LessonsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		34A38A3E1F69BB5600FCF134 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = Models/Lesson.swift; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 		27D74F831F0E745600109078 /* LearnToReadAndWriteThai */ = {
 			isa = PBXGroup;
 			children = (
+				34A11AD41F6D9827001C3F1A /* Additions */,
 				27D74FBA1F0E876F00109078 /* API */,
 				27D74F841F0E745600109078 /* AppDelegate.swift */,
 				27D74FA71F0E757B00109078 /* Models */,
@@ -169,6 +178,7 @@
 		27D74FA61F0E756B00109078 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3420D1A31F6D8CC700F0CE95 /* QuizScoreTableView */,
 				34A38A391F69BA4B00FCF134 /* LessonsCollectionView */,
 				340A13111F5ACC7500FD71E0 /* AnswersCollectionView */,
 				344AD7131F2E091E00E8033E /* QuizzesColletionView */,
@@ -177,6 +187,7 @@
 				344AD7111F2DE86B00E8033E /* QuizzesListViewController.swift */,
 				340A130F1F5ACABF00FD71E0 /* QuestionViewController.swift */,
 				34924A3E1F5ADE8900DAD6A0 /* QuizzViewController.swift */,
+				3420D19E1F6D677E00F0CE95 /* QuizzScoreViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -214,6 +225,15 @@
 			name = AnswersCollectionView;
 			sourceTree = "<group>";
 		};
+		3420D1A31F6D8CC700F0CE95 /* QuizScoreTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3420D1A41F6D8D0E00F0CE95 /* QuizzScoreTableViewDataSource.swift */,
+				3420D1A61F6D8F2600F0CE95 /* QuizzScoreTableViewCell.swift */,
+			);
+			name = QuizScoreTableView;
+			sourceTree = "<group>";
+		};
 		344AD7131F2E091E00E8033E /* QuizzesColletionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +252,14 @@
 				34A38A401F69BCA600FCF134 /* JsonLesson.swift */,
 			);
 			name = JsonDecodeModels;
+			sourceTree = "<group>";
+		};
+		34A11AD41F6D9827001C3F1A /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				34A11AD51F6D9844001C3F1A /* MutableCollection+Shuffle.swift */,
+			);
+			name = Additions;
 			sourceTree = "<group>";
 		};
 		34A38A391F69BA4B00FCF134 /* LessonsCollectionView */ = {
@@ -350,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A38A431F69C23C00FCF134 /* LessonViewController.swift in Sources */,
+				3420D1A71F6D8F2600F0CE95 /* QuizzScoreTableViewCell.swift in Sources */,
 				344AD7171F2E09E000E8033E /* QuizzesCollectionViewDataSource.swift in Sources */,
 				27D74FB71F0E81FA00109078 /* Level.swift in Sources */,
 				344AD7101F2DE85500E8033E /* LessonsListViewController.swift in Sources */,
@@ -366,7 +395,9 @@
 				34A38A3B1F69BA8500FCF134 /* LessonsCells.swift in Sources */,
 				34924A3F1F5ADE8900DAD6A0 /* QuizzViewController.swift in Sources */,
 				344AD7151F2E096300E8033E /* QuizzesCells.swift in Sources */,
+				34A11AD61F6D9844001C3F1A /* MutableCollection+Shuffle.swift in Sources */,
 				345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */,
+				3420D19F1F6D677E00F0CE95 /* QuizzScoreViewController.swift in Sources */,
 				27D74F871F0E745600109078 /* ViewController.swift in Sources */,
 				27D74F851F0E745600109078 /* AppDelegate.swift in Sources */,
 				27D74FB51F0E81E900109078 /* User.swift in Sources */,
@@ -375,6 +406,7 @@
 				3485720F1F125DEB00E407C5 /* DataManager.swift in Sources */,
 				3485720D1F125A4400E407C5 /* RequestBuilder.swift in Sources */,
 				34A38A411F69BCA600FCF134 /* JsonLesson.swift in Sources */,
+				3420D1A51F6D8D0E00F0CE95 /* QuizzScoreTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

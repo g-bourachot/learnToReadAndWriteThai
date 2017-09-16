@@ -23,6 +23,7 @@ class AnswersCollectionViewDataSource {
     func refresh(){
         if self.question.answers.count > 0 {
             content = self.question.answers.map(CellModel.result)
+            content.shuffle()
         }else {
             content = [CellModel.noResult]
         }

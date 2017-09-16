@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesCollectionViewDataSourceDelegate, QuizzViewControllerDelegate {
+class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QuizzesCollectionViewDataSourceDelegate, QuizzViewControllerDelegate, QuizzScoreViewControllerDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +23,14 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
         self.dataSource.delegate = self
         self.dataSource.setState(state: .initial)
         self.dataSource.refresh()
+    }
+    
+    //MARK: - Functions
+    func presentScoreViewController(with quizz:Quizz) {
+        let quizzScoreViewController = self.storyboard!.instantiateViewController(withIdentifier: "QuizzScoreViewController") as! QuizzScoreViewController
+        quizzScoreViewController.finishedQuizz = quizz
+        quizzScoreViewController.delegate = self
+        self.present(quizzScoreViewController, animated: true, completion: nil)
     }
     
     //MARK: - UICollectionViewDataSource
@@ -89,7 +97,13 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
     }
     
     //MARK: - QuizzViewControllerDelegate
-    func quizzIsFinished() {
+    func quizzIsFinished(quizz: Quizz) {
+        self.dismiss(animated: true, completion: nil)
+        self.presentScoreViewController(with: quizz)
+    }
+    
+    //MARK: - QuizzScoreViewControllerDelegate
+    func closeScoreViewController() {
         self.dismiss(animated: true, completion: nil)
     }
 }
