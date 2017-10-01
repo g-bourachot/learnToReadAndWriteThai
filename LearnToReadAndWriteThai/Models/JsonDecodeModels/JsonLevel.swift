@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct JsonLevel : Decodable {
+struct JsonLevel : Codable {
     //MARK: - Variables
     typealias Identifier = Int
     let identifier : JsonLevel.Identifier

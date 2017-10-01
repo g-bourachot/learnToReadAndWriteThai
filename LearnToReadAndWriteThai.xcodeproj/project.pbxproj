@@ -34,6 +34,7 @@
 		345E06731F24DEDC00C2A42A /* JsonQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E06721F24DEDC00C2A42A /* JsonQuestion.swift */; };
 		3485720D1F125A4400E407C5 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720C1F125A4400E407C5 /* RequestBuilder.swift */; };
 		3485720F1F125DEB00E407C5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3485720E1F125DEB00E407C5 /* DataManager.swift */; };
+		3489BF9F1F80DBFB000E82E9 /* LocalDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3489BF9E1F80DBFB000E82E9 /* LocalDatas.swift */; };
 		34924A3D1F5AD6B300DAD6A0 /* Quizz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34924A3C1F5AD6B300DAD6A0 /* Quizz.swift */; };
 		34924A3F1F5ADE8900DAD6A0 /* QuizzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34924A3E1F5ADE8900DAD6A0 /* QuizzViewController.swift */; };
 		34A11AD61F6D9844001C3F1A /* MutableCollection+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A11AD51F6D9844001C3F1A /* MutableCollection+Shuffle.swift */; };
@@ -86,6 +87,7 @@
 		345E06721F24DEDC00C2A42A /* JsonQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonQuestion.swift; path = Models/JsonDecodeModels/JsonQuestion.swift; sourceTree = "<group>"; };
 		3485720C1F125A4400E407C5 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestBuilder.swift; path = API/RequestBuilder.swift; sourceTree = "<group>"; };
 		3485720E1F125DEB00E407C5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = API/DataManager.swift; sourceTree = "<group>"; };
+		3489BF9E1F80DBFB000E82E9 /* LocalDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalDatas.swift; path = Models/LocalDatas.swift; sourceTree = "<group>"; };
 		34924A3C1F5AD6B300DAD6A0 /* Quizz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Quizz.swift; path = Models/Quizz.swift; sourceTree = "<group>"; };
 		34924A3E1F5ADE8900DAD6A0 /* QuizzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizzViewController.swift; path = ViewControllers/QuizzViewController.swift; sourceTree = "<group>"; };
 		34A11AD51F6D9844001C3F1A /* MutableCollection+Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MutableCollection+Shuffle.swift"; path = "Additions/MutableCollection+Shuffle.swift"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		27D74F831F0E745600109078 /* LearnToReadAndWriteThai */ = {
 			isa = PBXGroup;
 			children = (
+				3489BF9D1F80DA16000E82E9 /* Local Storage */,
 				34A11AD41F6D9827001C3F1A /* Additions */,
 				27D74FBA1F0E876F00109078 /* API */,
 				27D74F841F0E745600109078 /* AppDelegate.swift */,
@@ -203,6 +206,7 @@
 				27D74FB81F0E834B00109078 /* Media.swift */,
 				34924A3C1F5AD6B300DAD6A0 /* Quizz.swift */,
 				34A38A3E1F69BB5600FCF134 /* Lesson.swift */,
+				3489BF9E1F80DBFB000E82E9 /* LocalDatas.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -252,6 +256,13 @@
 				34A38A401F69BCA600FCF134 /* JsonLesson.swift */,
 			);
 			name = JsonDecodeModels;
+			sourceTree = "<group>";
+		};
+		3489BF9D1F80DA16000E82E9 /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Local Storage";
 			sourceTree = "<group>";
 		};
 		34A11AD41F6D9827001C3F1A /* Additions */ = {
@@ -387,6 +398,7 @@
 				340A13131F5ACD0200FD71E0 /* AnswersCells.swift in Sources */,
 				27D74FB11F0E81C900109078 /* Question.swift in Sources */,
 				34A38A3D1F69BAA700FCF134 /* LessonsCollectionViewDataSource.swift in Sources */,
+				3489BF9F1F80DBFB000E82E9 /* LocalDatas.swift in Sources */,
 				345E06701F24C03D00C2A42A /* JsonLevel.swift in Sources */,
 				27D74FB91F0E834B00109078 /* Media.swift in Sources */,
 				344AD7121F2DE86B00E8033E /* QuizzesListViewController.swift in Sources */,

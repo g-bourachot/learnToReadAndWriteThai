@@ -16,6 +16,7 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
     
     //MARK: - Variables
     private var dataSource : QuizzesCollectionViewDataSource = QuizzesCollectionViewDataSource()
+    private var runningLevel : Level? = nil
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -65,7 +66,7 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
         switch cellModel {
         case .result(let level):
             //TODO: Print Loading spinning
-            
+            self.runningLevel = level
             let quizzGenerator = QuizzGenerator(level: level, numberOfQuestion: 10)
             quizzGenerator.generate(completionHandler: { (generatedQuizz, error) in
                 //TODO: Stop spinning
@@ -98,6 +99,11 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
     
     //MARK: - QuizzViewControllerDelegate
     func quizzIsFinished(quizz: Quizz) {
+        if let runningLevel = self.runningLevel {
+            runningLevel.score = quizz.currentScore
+            LocalDatas.save(level: runningLevel.getJsonLevel())
+            self.runningLevel = nil
+        }
         self.dismiss(animated: true, completion: nil)
         self.presentScoreViewController(with: quizz)
     }
