@@ -8,10 +8,18 @@
 
 import Foundation
 
-class Level {
+struct Level : Codable {
+    
+    //MARK: - CodingKeys declaration
+    enum CodingKeys : String, CodingKey {
+        case id = "identifier"
+        case name = "name"
+        case status = "status"
+        case score = "score"
+    }
     
     //MARK: - Declaration of types
-    enum Status : Int {
+    enum Status : Int, Codable {
         case done = 0
         case locked = 1
         case accessible = 2
@@ -33,28 +41,19 @@ class Level {
     }
     
     //MARK: - Life cycle functions
-    init(id: Identifier, name: String, status: Status) {
-        self.id = id
-        self.status = status
-        self.name = name
-    }
-    
-    init(jsonLevel : JsonLevel) {
-        self.id = jsonLevel.identifier
-        self.name = jsonLevel.name
-        self.status = Status(rawValue: jsonLevel.status)!
-        if let score = jsonLevel.score {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        if let score = try container.decodeIfPresent(Int.self, forKey: .score) {
             self.score = score
         }
+        self.status = try container.decode(Level.Status.self, forKey: .status)
     }
     
     //MARK: - Functions
-    func setStatus(to status: Status){
+    mutating func setStatus(to status: Status){
         self.status = status
-    }
-    
-    func getJsonLevel() -> JsonLevel {
-        return JsonLevel(identifier: self.id, name: self.name, score: self.score, status: self.status.rawValue)
     }
     
 }

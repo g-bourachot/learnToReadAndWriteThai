@@ -8,12 +8,22 @@
 
 import Foundation
 
-struct Question {
+struct Question : Decodable {
     //MARK: - Declaration of types
-    enum QuestionType: Int {
+    enum QuestionType: Int, Decodable {
         case soundToCharacter = 0
         case characterToSound = 1
         case findTheCharacter = 2
+    }
+    
+    //MARK: - CodingKeys declaration
+    enum CodingKeys : String, CodingKey {
+        case identifier = "identifier"
+        case type = "type"
+        case level = "level"
+        case characters = "characters"
+        case mediaUrl = "mediaUrl"
+        case answers = "answers"
     }
     
     //MARK: - Variables
@@ -36,18 +46,20 @@ struct Question {
         self.answers = answers
     }
     
-    init(jsonQuestion : JsonQuestion) {
-        self.identifier = jsonQuestion.identifier
-        self.type = QuestionType.init(rawValue: jsonQuestion.type)!
-        self.level = jsonQuestion.level
-        self.characters = jsonQuestion.characters
-        if let mediaPath = jsonQuestion.mediaUrl, let mediaURL = URL.init(string: mediaPath) {
-            //TODO : change type of media when necessary
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.identifier = try container.decode(Int.self, forKey: .identifier)
+        let questionType = try container.decode(Int.self, forKey: .type)
+        self.type = QuestionType.init(rawValue: questionType)!
+        self.level = try container.decode(Int.self, forKey: .level)
+        self.characters = try container.decodeIfPresent(String.self, forKey: .characters)
+        self.answers = try container.decode([Answer].self, forKey: .answers)
+        if let mediaPath = try container.decodeIfPresent(String.self, forKey: .mediaUrl), let mediaURL = URL.init(string: mediaPath) {
             self.media = Media.init(type: .sound(mediaURL))
-        }else{
+        } else {
             self.media = nil
         }
-        self.answers = jsonQuestion.answers.map({ Answer.init(jsonAnswer: $0)})
+        
     }
     
     func getRightAnswers() ->[Answer] {

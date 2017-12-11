@@ -8,13 +8,21 @@
 
 import Foundation
 
-class Lesson {
+struct Lesson : Decodable {
+    
+    //MARK: - CodingKeys declaration
+    enum CodingKeys : String, CodingKey {
+        case identifier = "identifier"
+        case name = "name"
+        case content = "content"
+        case status = "status"
+    }
     
     //MARK: - Declaration of types
-    enum Status {
-        case read
-        case locked
-        case accessible
+    enum Status : Int, Decodable {
+        case read = 2
+        case locked = 1
+        case accessible = 0
     }
     
     typealias Identifier = Int
@@ -40,24 +48,16 @@ class Lesson {
         self.status = status
     }
     
-    init(jsonLesson : JsonLesson) {
-        self.id = jsonLesson.identifier
-        self.name = jsonLesson.name
-        self.content = jsonLesson.content
-        switch jsonLesson.status {
-        case 0:
-            self.status = .accessible
-        case 1:
-            self.status = .locked
-        case 2:
-            self.status = .read
-        default:
-            self.status = .locked
-        }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .identifier)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.content = try container.decode(String.self, forKey: .content)
+        self.status = try container.decode(Status.self, forKey: .status)
     }
     
     //MARK: - Functions
-    func setStatus(to status: Status){
+    mutating func setStatus(to status: Status){
         self.status = status
     }
     

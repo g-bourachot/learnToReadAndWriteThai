@@ -10,32 +10,32 @@ import Foundation
 
 struct LocalDatas {
     //MARK: - Variables
-    static private var finishedLevels : [JsonLevel] = []
+    static private var finishedLevels : [Level] = []
     
     //MARK: - Functions
     static func getFinishedLevels() -> [Level] {
         var levels : [Level] = []
         if let savedLevel = UserDefaults.standard.data(forKey: "LocalDatas_levels") {
-            if let jsonLevels = try? JSONDecoder().decode([JsonLevel].self, from: savedLevel ) {
-                levels = jsonLevels.map( { Level.init(jsonLevel: $0) })
+            if let decodedLevels = try? JSONDecoder().decode([Level].self, from: savedLevel ) {
+                levels = decodedLevels
             }
         }
         return levels
     }
     
-    static private func getStoredJsonLevels() -> [JsonLevel] {
-        var storeJsonLevels : [JsonLevel] = []
+    static private func getStoredLevels() -> [Level] {
+        var storedLevels : [Level] = []
         if let savedLevel = UserDefaults.standard.data(forKey: "LocalDatas_levels") {
-            if let jsonLevels = try? JSONDecoder().decode([JsonLevel].self, from: savedLevel ) {
-                storeJsonLevels = jsonLevels
+            if let decodedLevels = try? JSONDecoder().decode([Level].self, from: savedLevel ) {
+                storedLevels = decodedLevels
             }
         }
-        return storeJsonLevels
+        return storedLevels
     }
     
-    static func save(level : JsonLevel) {
+    static func save(level : Level) {
         let jsonEncoder = JSONEncoder()
-        var levels = self.getStoredJsonLevels()
+        var levels = self.getStoredLevels()
         levels.append(level)
         if let savedData = try? jsonEncoder.encode(levels) {
             let defaults = UserDefaults.standard

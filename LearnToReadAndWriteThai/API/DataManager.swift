@@ -31,8 +31,7 @@ class DataManager {
         if let request = try? RequestBuilder.getLevelsRequest() {
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data {
-                    let jsonLevels = try! decoder.decode([JsonLevel].self, from: data)
-                    let levels = jsonLevels.map({ Level.init(jsonLevel: $0) })
+                    let levels = try! decoder.decode([Level].self, from: data)
                     completionHandler(levels,nil)
                 }
                 if let error = error {
@@ -48,8 +47,7 @@ class DataManager {
             let task = URLSession.shared.dataTask(with: request,
                                                   completionHandler: { (data, response, error) in
                                                     if let data = data {
-                                                        let jsonLevel = try! decoder.decode(JsonLevel.self, from: data)
-                                                        let level = Level.init(jsonLevel: jsonLevel)
+                                                        let level = try! decoder.decode(Level.self, from: data)
                                                         completionHandler(level,nil)
                                                     }
                                                     if let error = error {
@@ -64,8 +62,7 @@ class DataManager {
         if let request = try? RequestBuilder.getQuestionsRequest(for: level, limit: limit){
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data {
-                    let jsonQuestions = try! decoder.decode([JsonQuestion].self, from: data)
-                    let questions = jsonQuestions.map({Question.init(jsonQuestion: $0)})
+                    let questions = try! decoder.decode([Question].self, from: data)
                     completionHandler(questions,nil)
                 }
                 if let error = error {
@@ -80,8 +77,7 @@ class DataManager {
         if let request = try? RequestBuilder.getAnswerRequest(for: question) {
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data {
-                    let jsonAnswers = try! decoder.decode([JsonAnswer].self, from: data)
-                    let answers = jsonAnswers.map({Answer.init(jsonAnswer: $0)})
+                    let answers = try! decoder.decode([Answer].self, from: data)
                     completionHandler(answers,nil)
                 }
                 if let error = error {
@@ -96,8 +92,7 @@ class DataManager {
         if let request = try? RequestBuilder.getLessonsRequest() {
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data {
-                    let jsonLessons = try! decoder.decode([JsonLesson].self, from: data)
-                    let lessons = jsonLessons.map({ Lesson.init(jsonLesson: $0) })
+                    let lessons = try! decoder.decode([Lesson].self, from: data)
                     completionHandler(lessons,nil)
                 }
                 if let error = error {
@@ -113,8 +108,7 @@ class DataManager {
             let task = URLSession.shared.dataTask(with: request,
                                                   completionHandler: { (data, response, error) in
                                                     if let data = data {
-                                                        let jsonLesson = try! decoder.decode(JsonLesson.self, from: data)
-                                                        let lesson = Lesson.init(jsonLesson: jsonLesson)
+                                                        let lesson = try! decoder.decode(Lesson.self, from: data)
                                                         completionHandler(lesson,nil)
                                                     }
                                                     if let error = error {

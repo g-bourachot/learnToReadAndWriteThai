@@ -99,9 +99,9 @@ class QuizzesListViewController : UIViewController, UICollectionViewDelegate, UI
     
     //MARK: - QuizzViewControllerDelegate
     func quizzIsFinished(quizz: Quizz) {
-        if let runningLevel = self.runningLevel {
+        if var runningLevel = self.runningLevel {
             runningLevel.score = quizz.currentScore
-            LocalDatas.save(level: runningLevel.getJsonLevel())
+            LocalDatas.save(level: runningLevel)
             self.runningLevel = nil
         }
         self.dismiss(animated: true, completion: nil)

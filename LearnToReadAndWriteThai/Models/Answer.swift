@@ -8,7 +8,16 @@
 
 import Foundation
 
-struct Answer: Equatable{
+struct Answer: Equatable, Decodable{
+    
+    //MARK: - CodingKeys declaration
+    enum CodingKeys : String, CodingKey {
+        case identifier = "identifier"
+        case characters = "characters"
+        case mediaUrl = "mediaUrl"
+        case isRight = "isRight"
+    }
+    
     //MARK: - Variables
     typealias Identifier = Int
     let identifier: Identifier
@@ -24,13 +33,18 @@ struct Answer: Equatable{
         self.characters = characters
     }
     
-    init(jsonAnswer: JsonAnswer) {
-        self.identifier = (jsonAnswer.identifier)
-        self.isRight = (jsonAnswer.isRight == 1)
-        self.characters = jsonAnswer.characters
-        if let mediaPath = jsonAnswer.mediaUrl, let mediaURL = URL.init(string: mediaPath) {
-            self.media = Media.init(type: .sound(mediaURL))
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.identifier = try container.decode(Int.self, forKey: .identifier)
+        self.isRight = ( try container.decode(Int.self, forKey: .isRight) == 1)
+        if let characters = try container.decodeIfPresent(String.self, forKey: .characters) {
+            self.characters = characters
         }else {
+            self.characters = nil
+        }
+        if let mediaPath = try container.decodeIfPresent(String.self, forKey: .mediaUrl), let mediaURL = URL.init(string: mediaPath) {
+            self.media = Media.init(type: .sound(mediaURL))
+        } else {
             self.media = nil
         }
     }
