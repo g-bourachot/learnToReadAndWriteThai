@@ -20,6 +20,20 @@
                ReferencedContainer = "container:LearnToReadAndWriteThai.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "27D74F941F0E745600109078"
+               BuildableName = "LearnToReadAndWriteThaiTests.xctest"
+               BlueprintName = "LearnToReadAndWriteThaiTests"
+               ReferencedContainer = "container:LearnToReadAndWriteThai.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
